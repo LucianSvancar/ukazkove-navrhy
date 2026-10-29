@@ -1,169 +1,21 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Elite Contractors – Roofing and Construction, Jackson TN (concept mockup)</title>
-<meta name="description" content="Concept mockup of a homepage for Elite Contractors, Jackson, TN.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=optional" media="print" onload="this.media='all'">
-<style>
-:root{--navy:#0F1B2D;--navy2:#16273F;--red:#D7263D;--paper:#F4F1EA;--ink:#0F1B2D;--mute:#5A6678;--head:"Barlow Condensed",Impact,sans-serif;--body:"Inter",system-ui,sans-serif;--ease:cubic-bezier(.22,.8,.3,1)}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-h1,h2,h3{font-family:var(--head);font-weight:700;text-transform:uppercase;line-height:.95;letter-spacing:.01em}
-.wrap{width:min(1240px,100% - 3rem);margin-inline:auto}
-.top{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff}
-.top .wrap{display:flex;justify-content:space-between;align-items:center;min-height:68px;gap:1rem}
-.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--head);font-size:1.7rem;font-weight:700;letter-spacing:.02em}
-.brand i{display:inline-block;width:34px;height:34px;border-radius:50%;background:#000;border:3px solid var(--red);position:relative}
-.brand i::before{content:"";position:absolute;left:7px;right:7px;top:9px;height:3px;background:#fff;box-shadow:0 6px 0 #fff,0 12px 0 #fff}
-.top nav{display:flex;gap:1.6rem;font-weight:500;font-size:.95rem}
-.top nav a{text-decoration:none;opacity:.85;min-height:44px;display:inline-flex;align-items:center}
-.top nav a:hover{opacity:1}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.5rem;background:var(--red);color:#fff;text-decoration:none;font-weight:600;transition:transform .15s var(--ease)}
-.btn:active{transform:scale(.97)}
-.btn.line{background:transparent;border:2px solid currentColor}
-
-.hero{background:var(--navy);color:#fff;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:3rem;padding-block:clamp(3rem,7vw,6rem);align-items:end}
-.kicker{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;color:#ff8c9b;margin-bottom:1.2rem}
-h1{font-size:clamp(3.4rem,8.4vw,8rem)}
-h1 em{font-style:normal;color:var(--red)}
-.lede{max-width:46ch;margin-top:1.6rem;color:#C9D2E0}
-.acts{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
-.mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 260px;gap:10px}
-.mosaic figure{overflow:hidden;margin:0;position:relative;background:var(--navy2)}
-.mosaic figure:first-child{grid-row:1/3}
-.mosaic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
-.mosaic figure:hover img{transform:scale(1.04)}
-
-.facts{background:var(--paper);border-bottom:1px solid #d8d3c6}
-.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.facts div{padding:1.6rem 1.4rem 1.6rem 0;border-right:1px solid #d8d3c6;padding-left:1.4rem}
-.facts div:first-child{padding-left:0}
-.facts div:last-child{border:0}
-.facts b{display:block;font-family:var(--head);font-size:2.3rem;text-transform:uppercase;line-height:1}
-.facts span{color:var(--mute);font-size:.9rem}
-
-section{padding-block:clamp(4rem,8vw,7rem)}
-h2{font-size:clamp(2.4rem,5.6vw,5rem);margin-bottom:2.4rem}
-.svc{border-top:3px solid var(--ink)}
-.svc a{display:grid;grid-template-columns:5rem minmax(0,5fr) minmax(0,6fr) 3rem;gap:1.5rem;align-items:center;padding:1.8rem 0;border-bottom:1px solid #cfc9ba;text-decoration:none;transition:background .2s,padding .2s var(--ease)}
-.svc a:hover{background:#ebe6d9;padding-inline:1rem}
-.svc .n{font-family:var(--head);font-size:2.6rem;color:var(--red)}
-.svc h3{font-size:clamp(1.8rem,3vw,2.8rem)}
-.svc p{color:var(--mute)}
-.svc .ar{font-size:1.6rem;text-align:right}
-
-.dark{background:var(--navy);color:#fff}
-.awards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 3rem}
-.awards li{list-style:none;padding:1.2rem 0;border-top:1px solid #2c3d57;font-size:1.05rem}
-.awards b{display:block;font-family:var(--head);font-size:1.6rem;text-transform:uppercase;color:#fff;margin-bottom:.2rem}
-
-.gal{overflow-x:auto;display:flex;gap:12px;padding:0 max(1.5rem,calc((100vw - 1240px)/2)) 1rem;scroll-snap-type:x mandatory}
-.gal figure{flex:0 0 min(78vw,520px);margin:0;scroll-snap-align:start}
-.gal img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
-.gal figcaption{font-size:.8rem;color:var(--mute);margin-top:.5rem}
-
-.cta{background:var(--red);color:#fff}
-.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
-.cta h2{margin:0;max-width:14ch}
-.cta .btn{background:#fff;color:var(--ink);font-size:1.1rem}
-.cta .num{font-family:var(--head);font-size:clamp(2.4rem,5vw,4rem);text-decoration:none;display:block}
-
-footer{background:var(--navy);color:#a9b4c6;padding:2rem 0 5rem;font-size:.82rem}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-.bar{display:none}
-@media (max-width:900px){
-  .top nav{display:none}
-  .hero .wrap{grid-template-columns:1fr}
-  .mosaic{grid-template-rows:150px 190px}
-  .facts .wrap{grid-template-columns:1fr 1fr}
-  .facts div{border:0;padding:1rem 1rem 1rem 0}
-  .svc a{grid-template-columns:3rem 1fr}
-  .svc p{grid-column:2}
-  .svc .ar{display:none}
-  .awards{grid-template-columns:1fr}
-  .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--red);color:#fff;min-height:56px;align-items:center;justify-content:center;font-weight:700;text-decoration:none}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}.reveal{opacity:1;transform:none}}
-</style>
-</head>
-<body>
-<header class="top"><div class="wrap">
-  <a class="brand" href="#"><i></i>Elite Contractors</a>
-  <nav><a href="#services">Services</a><a href="#awards">Awards</a><a href="#work">Our Work</a><a href="#contact">Contact</a></nav>
-  <a class="btn" href="tel:+17313003510">731-300-3510</a>
-</div></header>
-
-<main>
-<div class="hero"><div class="wrap">
-  <div>
-    <p class="kicker">Jackson, Tennessee · Licensed, bonded &amp; insured</p>
-    <h1>Roofing and construction, <em>done once.</em></h1>
-    <p class="lede">A Tennessee unlimited licensed, bonded and insured general contractor in Jackson. Commercial and residential construction, roofing and insurance restoration with one point of contact.</p>
-    <div class="acts"><a class="btn" href="mailto:Info@elitecontractorsus.com?subject=Estimate%20request">Schedule an Estimate</a><a class="btn line" href="tel:+17313003510">Call 731-300-3510</a></div>
-  </div>
-  <div class="mosaic">
-    <figure><img src="img/p5.webp" alt="Brick church with a new roof" width="1000" height="667" fetchpriority="high"></figure>
-    <figure><img src="img/p2.webp" alt="White commercial roof" width="1000" height="667"></figure>
-    <figure><img src="img/p7.webp" alt="Brick home with a shingle roof" width="1000" height="667"></figure>
-  </div>
-</div></div>
-
-<div class="facts"><div class="wrap">
-  <div><b>20+ years</b><span>serving customers in Jackson</span></div>
-  <div><b>TN unlimited</b><span>licensed general contractor</span></div>
-  <div><b>Top 100</b><span>National Roofing Contractor, 2020</span></div>
-  <div><b>6 years</b><span>Best of Jackson, Construction &amp; Remodeling (2018 to 2023)</span></div>
-</div></div>
-
-<section id="services"><div class="wrap">
-  <h2 class="reveal">What we build</h2>
-  <div class="svc reveal">
-    <a href="mailto:Info@elitecontractorsus.com?subject=Roofing"><span class="n">01</span><h3>Roofing</h3><p>New roofs and repairs for homes, churches, offices and strip malls. Products from Atlas Roofing, with ABC Supply as a partner.</p><span class="ar">→</span></a>
-    <a href="mailto:Info@elitecontractorsus.com?subject=Commercial%20renovation"><span class="n">02</span><h3>Commercial renovation</h3><p>Remodeling and new construction, so the property looks and works better than before.</p><span class="ar">→</span></a>
-    <a href="mailto:Info@elitecontractorsus.com?subject=Insurance%20restoration"><span class="n">03</span><h3>Insurance mitigation &amp; restoration</h3><p>Restoration work for insurance projects, from the first call to the finished repair.</p><span class="ar">→</span></a>
-  </div>
-</div></section>
-
-<section class="dark" id="awards"><div class="wrap">
-  <h2 class="reveal">Recognized work</h2>
-  <ul class="awards reveal">
-    <li><b>Best of Jackson, Construction &amp; Remodeling</b>2018, 2019, 2020, 2021, 2022 and 2023 (Jackson Awards Program)</li>
-    <li><b>VIP Best Roofer &amp; General Contractor</b>2023</li>
-    <li><b>Top 100 National Roofing Contractor</b>2020</li>
-    <li><b>Product partners</b>Carlisle Roofing Product Supplier, Atlas Roofing, ABC Supply</li>
-  </ul>
-</div></section>
-
-<section id="work" style="padding-bottom:3rem"><div class="wrap"><h2 class="reveal">Our work</h2></div>
-  <div class="gal">
-    <figure><img src="img/p1.webp" alt="Commercial project" loading="lazy" width="1000" height="667"><figcaption>Commercial</figcaption></figure>
-    <figure><img src="img/p3.webp" alt="Church with new metal roof" loading="lazy" width="1000" height="667"><figcaption>Church</figcaption></figure>
-    <figure><img src="img/p4.webp" alt="Building exterior" loading="lazy" width="1000" height="667"><figcaption>Banking</figcaption></figure>
-    <figure><img src="img/p6.webp" alt="Industrial building" loading="lazy" width="1000" height="667"><figcaption>Industrial</figcaption></figure>
-  </div>
-</section>
-
-<section class="cta"><div class="wrap">
-  <h2>Ready for an estimate?</h2>
-  <div><a class="num" href="tel:+17313003510">731-300-3510</a><a class="btn" style="margin-top:1rem" href="mailto:Info@elitecontractorsus.com?subject=Estimate%20request">Schedule an Estimate</a></div>
-</div></section>
-</main>
-
-<footer><div class="wrap"><p>Concept mockup by Lucián Švancár, not the official website of Elite Contractors. Text and photos are taken from the current website for this private preview only.</p></div></footer>
-<a class="bar" href="tel:+17313003510">Call Elite Contractors</a>
-<script>
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-</script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Commercial Roofing Contractor in Jackson | Elite Contractors, Jackson TN (concept mockup)</title><meta name="description" content="Elite Contractors: roofing, commercial renovation and insurance restoration in Jackson, TN">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="style.css"></head><body>
+<div class="topbar"><div class="w"><span>Jackson, TN · Licensed, bonded &amp; insured · Open 24/7</span><span><a href="tel:+17313003510">731-300-3510</a> · <a href="mailto:Info@elitecontractorsus.com">Info@elitecontractorsus.com</a></span></div></div>
+<header class="hd"><div class="w hdi"><a class="brand" href="index.html"><img src="img/cropped-elite-logo-jpeg-scaled-1-270x270.webp" width="200" height="200" alt="Elite Contractors"><span><b>Elite Contractors</b><i>Jackson, Tennessee</i></span></a>
+<nav class="nav" aria-label="Menu"><a href="index.html" class="cur">Home</a><div class="dd"><button type="button" aria-expanded="false" class="">Services <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><div class="ddm"><a href="roofing.html">Roofing</a><a href="commercial-renovation.html">Commercial Renovation</a><a href="insurance-restoration.html">Insurance Restoration</a></div></div><a href="gallery.html" class="">Gallery</a><a href="testimonials.html" class="">Testimonials</a><div class="dd"><button type="button" aria-expanded="false" class="">About <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><div class="ddm"><a href="about-us.html">About Us</a><a href="about-us.html#volunteer">Volunteer Work</a><a href="financing.html">Financing & FAQ</a><a href="chattanooga.html">Chattanooga</a></div></div><a href="contact-us.html" class="">Contact</a></nav><div class="hdc"><a class="btn ghost" href="tel:+17313003510">731-300-3510</a><a class="btn " href="contact-us.html">Schedule an Estimate</a></div>
+<button class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button></div>
+<div class="mnav" hidden><a href="index.html">Home</a><p>Services</p><a href="roofing.html">Roofing</a><a href="commercial-renovation.html">Commercial Renovation</a><a href="insurance-restoration.html">Insurance Restoration</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Testimonials</a><p>About</p><a href="about-us.html">About Us</a><a href="about-us.html#volunteer">Volunteer Work</a><a href="financing.html">Financing & FAQ</a><a href="chattanooga.html">Chattanooga</a><a href="contact-us.html">Contact</a></div></header>
+<main><section class="hero2"><img src="img/September-22020-video-shoot-178.webp" width="760" height="506" alt="Elite Contractors commercial roofing project" fetchpriority="high"><div class="w hh"><p class="eyebrow">Jackson, Tennessee · Licensed, bonded &amp; insured</p><h1>Roofing and construction, done once.</h1><p class="lead">A Tennessee unlimited licensed general contractor serving Jackson and the Southeast US. Commercial and residential construction, roofing and insurance restoration with one point of contact.</p><div class="acts"><a class="btn big" href="contact-us.html">Schedule an Estimate</a><a class="btn ghost light big" href="tel:+17313003510">Call 731-300-3510</a></div><p class="storm"><a href="insurance-restoration.html">Storm, hail or fire damage? Insurance claims →</a></p></div></section>
+<section class="trust"><div class="w tg"><div><b>20+ years</b><span>serving customers in Jackson</span></div><div><b>TN Unlimited</b><span>licensed general contractor</span></div><div><b>Top 100</b><span>National Roofing Contractor, 2020</span></div><div><b>6 years</b><span>Best of Jackson, Construction &amp; Remodeling (2018 to 2023)</span></div></div></section>
+<section class="sec"><div class="w"><h2 class="st">Commercial &amp; residential construction &amp; roofing</h2><p class="sub">No matter if you need a new roof or construction on your office building, church, strip mall or house, we will not just complete your project, we will make your property look and function better than before. As the premier supplier of Atlas Roofing products and a partner of ABC Supply, your home or business receives nothing but the finest quality products in the industry.</p><div class="tiles"><a class="tile" href="roofing.html"><img src="img/September-22020-video-shoot-178.webp" width="760" height="506" alt="" loading="lazy"><div><h3>Roofing</h3><p>Commercial membrane and silicone roofing, residential shingles and storm repair.</p><span>Learn more →</span></div></a><a class="tile" href="commercial-renovation.html"><img src="img/213-Industrial-Drive.webp" width="760" height="506" alt="" loading="lazy"><div><h3>Commercial Renovation</h3><p>From a small office remodel to a multi-story build, every phase under one roof.</p><span>Learn more →</span></div></a><a class="tile" href="insurance-restoration.html"><img src="img/Southern-Source-10.webp" width="760" height="506" alt="" loading="lazy"><div><h3>Insurance Restoration</h3><p>Fire, wind, hail and water damage. We manage the claim and the rebuild.</p><span>Learn more →</span></div></a><a class="tile" href="gallery.html"><img src="img/22-Hale-Farm-Road-2.webp" width="760" height="506" alt="" loading="lazy"><div><h3>Residential Roofing</h3><p>New roofs, gutters and exterior renovations for Tennessee homes.</p><span>Learn more →</span></div></a></div></div></section>
+<section class="sec alt"><div class="w two"><div><h2 class="st">Award-winning contractor in Jackson, TN</h2><p>We are Elite Contractors, your one stop for all of your commercial, residential and insurance restoration construction needs. For over 20 years the staff at Elite has strived to deliver the highest quality customer service.</p><ul class="aw"><li>Best of Jackson, Construction and Remodeling, 2018 to 2023 (Jackson Awards Program)</li><li>Carlisle Roofing product supplier</li><li>VIP Best Roofer &amp; General Contractor 2023</li><li>A 2020 Top 100 National Roofing Contractor</li></ul><div class="acts"><a class="btn" href="about-us.html">About Team Elite</a><a class="btn ghost" href="gallery.html">View our work</a></div></div><div><img class="awimg" src="img/Elite-Awards.webp" width="900" height="600" alt="Elite Contractors awards" loading="lazy"></div></div></section>
+<section class="sec"><div class="w"><h2 class="st">Before &amp; after</h2><p class="sub">No matter your residential, commercial or insurance restoration needs, Team Elite delivers top-notch service every step of the way.</p><div class="bagrid2"><figure class="ba" data-ba><div class="baimg"><img src="img/Various-After.webp" width="760" height="506" alt="After: project" loading="lazy"><img class="top" src="img/Various-2-Before.webp" width="760" height="570" alt="" loading="lazy"><input type="range" min="0" max="100" value="50" aria-label="Before and after"><i></i><em class="l1">Before</em><em class="l2">After</em></div></figure><figure class="ba" data-ba><div class="baimg"><img src="img/Dustin-Todd-After.webp" width="760" height="506" alt="After: project" loading="lazy"><img class="top" src="img/Dustin-Todd-Before-e1604438071946.webp" width="760" height="389" alt="" loading="lazy"><input type="range" min="0" max="100" value="50" aria-label="Before and after"><i></i><em class="l1">Before</em><em class="l2">After</em></div></figure></div></div></section>
+<section class="sec alt"><div class="w"><h2 class="st">Heard it through the grapevine</h2><div class="qgrid"><figure class="quote"><blockquote>Elite Contractors has completed several large commercial roofing projects for our company over the years. The projects were all completed on time with excellent results.</blockquote><figcaption><b>Robbie H.</b><span>MAT Industries, LLC</span></figcaption></figure><figure class="quote"><blockquote>Elite has done a lot of work for me over the years on my rental property and my personal home. They have always done a great job!!!</blockquote><figcaption><b>Phillip J.</b><span>Madison Place</span></figcaption></figure><figure class="quote"><blockquote>Elite Contractors replaced the roofs on our three commercial buildings and did a wonderful job. Their service was impeccable and roofs are high quality and very insulating as well as beautiful upgrades to our buildings.</blockquote><figcaption><b>Vickie F.</b><span>French’s Trucking</span></figcaption></figure></div><p class="more"><a href="testimonials.html">Read all testimonials →</a></p></div></section>
+<section class="sec"><div class="w"><h2 class="st">Our work</h2><div class="gal-row g6"><figure><img src="img/IMG_5619.webp" width="760" height="570" alt="Elite Contractors project" loading="lazy"></figure><figure><img src="img/IMG_5624.webp" width="760" height="570" alt="Elite Contractors project" loading="lazy"></figure><figure><img src="img/City-Hall-6.webp" width="760" height="506" alt="Elite Contractors project" loading="lazy"></figure><figure><img src="img/213-Industrial-Drive-5.webp" width="760" height="506" alt="Elite Contractors project" loading="lazy"></figure><figure><img src="img/22-Hale-Farm-Road-9.webp" width="760" height="506" alt="Elite Contractors project" loading="lazy"></figure><figure><img src="img/22-Hale-Farm-Road-8.webp" width="760" height="506" alt="Elite Contractors project" loading="lazy"></figure></div><p class="more"><a class="btn ghost" href="gallery.html">Open the full gallery →</a></p></div></section>
+<section class="sec alt"><div class="w two"><div><h2 class="st">Financing &amp; FAQ</h2><p>Financing for any construction project up to $100,000, terms up to 15 years, answer within 24 hours.</p><div class="faq"><details><summary>Why should you choose Elite Contractors?</summary><p>Elite Contractors is a Tennessee licensed General Contractor. That means we can handle any and all of your construction needs. From start to finish, design phase to final completion, our clients have one point of contact with Elite’s experienced staff to ensure a great experience.</p></details><details><summary>Does Elite Contractors offer 2D and 3D drawings?</summary><p>Elite Contractors has a designer to assist with any drawings or plans needed for our clients. If these plans require an architects stamp, Elite can provide that as well.</p></details><details><summary>Does Elite Contractors use subcontractors?</summary><p>Yes, Elite Contractors may use and only hire licensed and insured subcontractors. Such subcontractors can include but may not be limited to electricians, HVAC technicians, and plumbers.</p></details><details><summary>How do I obtain an estimate &amp; how long does it take to get it?</summary><p>If you need an estimate on a construction project, contact Elite Contractors at 731-300-3510 or email us at info@elitecontractors.com. We will schedule an on site appointment to listen to and help determine your exact construction needs. Most roofing quotes can be provided within 24-48 hours. Larger projects may require more time. However, your pro at Elite Contractors is always available to provide updates and will be able to give you a reasonable time frame on your estimate.</p></details></div><p class="more"><a href="financing.html">More questions →</a></p></div><div class="card sticky"><h3>More than a general contractor</h3><p>Since 2004, Team Elite has provided home improvement and construction services throughout Tennessee and the Southeast US. We are a leading mitigation contractor committed to minimizing damage and helping customers recover from natural disasters.</p><a class="btn full" href="contact-us.html">Tell us about your project</a><a class="btn ghost full" href="tel:+17313003510">Call 731-300-3510</a></div></div></section>
+<section class="sec"><div class="w"><h2 class="st">Trusted products &amp; partners</h2><div class="plogos"><img src="img/atlas-logo.webp" width="393" height="262" alt="Atlas" loading="lazy"><img src="img/GAF_Logo_jpg.webp" width="400" height="364" alt="GAF" loading="lazy"><img src="img/pella_dot_rgb.webp" width="400" height="400" alt="Pella" loading="lazy"><img src="img/Trane_logo_logotype.webp" width="400" height="129" alt="Trane" loading="lazy"><img src="img/mulehide.webp" width="400" height="392" alt="Mule-Hide" loading="lazy"><img src="img/NOTRANDLOGOTop100Logo.webp" width="400" height="244" alt="Top 100 Roofing Contractor" loading="lazy"></div><p class="sub">Elite Contractors is a trusted vendor for Realty Trust Group, aligning expert general contracting with strategic advisory and development vision.</p></div></section></main><section class="cta"><div class="w"><div><h2>Ready to schedule an estimate?</h2><p>Call us or send a message. Most roofing quotes within 24 to 48 hours.</p></div><div class="ctab"><a class="btn  big" href="contact-us.html">Schedule an Estimate</a><a class="btn ghost light big" href="tel:+17313003510">731-300-3510</a></div></div></section>
+<footer class="ft"><div class="w fgrid"><div><h3>Jackson Office</h3><p>110 Directors Row<br>Jackson, TN 38305</p><p><a href="https://maps.google.com/?q=110+Directors+Row+Jackson+TN" rel="noopener">Get directions</a></p></div><div><h3>Mailing Address</h3><p>319 Vann Drive E9<br>Jackson, TN 38305</p><p>Business hours: 24/7</p></div><div><h3>Contact</h3><p>Phone <a href="tel:+17313003510">731-300-3510</a><br>Fax 877-373-1944<br><a href="mailto:Info@elitecontractorsus.com">Info@elitecontractorsus.com</a></p></div><div><h3>Explore</h3><p><a href="roofing.html">Roofing</a><br><a href="commercial-renovation.html">Commercial Renovation</a><br><a href="insurance-restoration.html">Insurance Restoration</a><br><a href="gallery.html">Gallery</a><br><a href="testimonials.html">Testimonials</a><br><a href="financing.html">Financing &amp; FAQ</a></p></div></div><div class="w legal"><p>Concept mockup by Lucián Švancár, not the official website of Elite Contractors. Text, ratings and photos are taken from elitecontractorsus.com for this private preview only.</p></div></footer>
+<a class="callbar" href="tel:+17313003510">Call Elite 731-300-3510</a>
+<script src="app.js" defer></script></body></html>
