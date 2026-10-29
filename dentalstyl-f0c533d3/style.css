@@ -263,3 +263,7 @@ h1,h2,h3,h4{font-weight:400;letter-spacing:-.005em}
 .svb{padding-bottom:1.2rem}
 .dl2{font-weight:600}
 @media (max-width:980px){.insb .insl{grid-template-columns:repeat(3,1fr)}}
+.insl{background:#e2561a;padding:.9rem;border-radius:12px}
+.insl img{background:transparent!important;border:0!important;padding:.2rem!important}
+.insb{background:#e2561a}.insb .insl{background:none;border-radius:0}
+.insl.big img{height:56px}
