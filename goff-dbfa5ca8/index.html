@@ -1,137 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Goff Heating, Air Conditioning &amp; Plumbing – Texarkana (concept mockup)</title>
-<meta name="description" content="Concept mockup of a homepage for Goff Heating / Air Conditioning and Plumbing, Texarkana, TX.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700;62..125,800&family=Libre+Franklin:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#1B2A6B;--red:#C8102E;--sand:#F5F0E6;--ink:#141A33;--mute:#5C6280;--head:"Archivo",Impact,sans-serif;--body:"Libre Franklin",system-ui,sans-serif;--ease:cubic-bezier(.22,.8,.3,1)}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--sand);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-h1,h2,h3{font-family:var(--head);font-weight:800;font-stretch:90%;line-height:.98;text-transform:uppercase;letter-spacing:-.005em}
-.wrap{width:min(1240px,100% - 3rem);margin-inline:auto}
-.side{position:fixed;left:0;top:0;bottom:0;width:76px;background:var(--navy);color:#fff;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:1.2rem 0}
-.side .l{font-family:var(--head);font-weight:800;font-size:1.6rem;line-height:1;text-align:center;text-decoration:none}
-.side .l small{display:block;font-size:.55rem;letter-spacing:.14em;font-family:var(--body);font-weight:600}
-.side a.ph{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--head);font-weight:800;font-size:1.3rem;letter-spacing:.05em;text-decoration:none;background:var(--red);padding:1.2rem .7rem;min-height:44px}
-main,footer{margin-left:76px}
-
-.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:92vh}
-.hero .copy{padding:clamp(2rem,5vw,4.5rem);display:flex;flex-direction:column;justify-content:center}
-.eye{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--red);margin-bottom:1rem}
-h1{font-size:clamp(2.2rem,4.4vw,4.4rem);color:var(--navy);overflow-wrap:anywhere}
-.hero p.l{margin-top:1.4rem;max-width:42ch;font-size:1.1rem;color:var(--mute)}
-.acts{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
-.btn{display:inline-flex;align-items:center;min-height:52px;padding:.8rem 1.6rem;background:var(--red);color:#fff;font-weight:600;text-decoration:none;transition:transform .15s var(--ease)}
-.btn.o{background:transparent;color:var(--navy);border:2px solid var(--navy)}
-.btn:active{transform:scale(.97)}
-.hero .img{position:relative;background:var(--navy)}
-.hero .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.hero .img .tag{position:absolute;left:0;bottom:0;background:var(--navy);color:#fff;padding:1rem 1.4rem;font-weight:600;font-size:.9rem;max-width:80%}
-.hero .img .tag b{display:block;font-family:var(--head);font-size:1.3rem;text-transform:uppercase;font-stretch:90%}
-
-.band{background:var(--navy);color:#fff;padding:1.3rem 0}
-.band .wrap{display:flex;flex-wrap:wrap;gap:.5rem 3rem;justify-content:space-between;align-items:center}
-.band b{font-family:var(--head);font-size:1.5rem;text-transform:uppercase;font-stretch:90%}
-.band a{font-family:var(--head);font-size:2rem;font-weight:800;text-decoration:none}
-
-section{padding-block:clamp(3.5rem,7vw,6rem)}
-h2{font-size:clamp(2.2rem,5vw,4.4rem);margin-bottom:2.2rem;color:var(--navy)}
-.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-.tile{background:#fff;padding:1.6rem;display:flex;flex-direction:column;justify-content:space-between;min-height:200px;border-top:5px solid var(--navy)}
-.tile.big{grid-column:span 3;background:var(--navy);color:#fff;border-top-color:var(--red);min-height:260px}
-.tile.mid{grid-column:span 3}
-.tile.sm{grid-column:span 2}
-.tile h3{font-size:clamp(1.5rem,2.6vw,2.4rem)}
-.tile p{color:var(--mute);margin-top:.6rem}
-.tile.big p{color:#cdd3ee}
-
-.proj{padding-bottom:3rem}
-.pj{overflow-x:auto;display:flex;gap:12px;padding:0 1.5rem 1rem;scroll-snap-type:x mandatory}
-.pj figure{flex:0 0 min(80vw,460px);margin:0;scroll-snap-align:start}
-.pj img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
-.pj figcaption{font-weight:600;margin-top:.5rem}
-
-.contact{background:var(--red);color:#fff}
-.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.contact h2{color:#fff;margin:0}
-.contact .num{font-family:var(--head);font-weight:800;font-size:clamp(2.6rem,5.4vw,4.6rem);text-decoration:none;display:block;line-height:1}
-.contact a.m{font-size:1.2rem}
-footer{background:var(--navy);color:#b8bfe0;padding:2rem 1.5rem 6rem;font-size:.82rem}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-.bar{display:none}
-@media (max-width:900px){
-  .side{display:none}
-  main,footer{margin-left:0}
-  .hero{grid-template-columns:1fr}
-  .hero .img{height:62vw;min-height:260px;order:-1}
-  .grid{grid-template-columns:1fr}
-  .tile.big,.tile.mid,.tile.sm{grid-column:auto}
-  .contact .wrap{grid-template-columns:1fr}
-  .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--red);color:#fff;min-height:58px;align-items:center;justify-content:center;font-family:var(--head);font-weight:800;font-size:1.3rem;text-decoration:none}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}.reveal{opacity:1;transform:none}}
-</style>
-</head>
-<body>
-<aside class="side"><a class="l" href="#">Goff<small>HVAC · PLUMBING</small></a><a class="ph" href="tel:+19038386923">903-838-6923</a></aside>
-
-<main>
-<div class="hero">
-  <div class="copy">
-    <p class="eye">Texarkana · Family owned and operated</p>
-    <h1>Heating, air conditioning &amp; plumbing</h1>
-    <p class="l">Repair, service and installation for your home. Honest, professional work, with 24-hour on-call service.</p>
-    <div class="acts"><a class="btn" href="tel:+19038386923">Call 903-838-6923</a><a class="btn o" href="#services">Our services</a></div>
-  </div>
-  <div class="img">
-    <img src="img/p2.webp" alt="Outpatient clinic building in Texarkana" width="1280" height="833" fetchpriority="high">
-    <p class="tag"><b>Projects</b>Photo from the current website</p>
-  </div>
-</div>
-
-<div class="band"><div class="wrap"><b>24 hour on-call available</b><a href="tel:+19038386923">903-838-6923</a></div></div>
-
-<section id="services"><div class="wrap">
-  <h2 class="reveal">What we do</h2>
-  <div class="grid reveal">
-    <div class="tile big"><h3>Air conditioning &amp; heating</h3><p>Repair, service and installation for your home.</p></div>
-    <div class="tile mid"><h3>Plumbing</h3><p>Plumbing repair, service and installation.</p></div>
-    <div class="tile sm"><h3>Preventative maintenance program</h3></div>
-    <div class="tile sm"><h3>Air duct cleaning</h3></div>
-    <div class="tile sm"><h3>Dryer vent cleaning</h3></div>
-  </div>
-</div></section>
-
-<section class="proj"><div class="wrap"><h2 class="reveal">Projects</h2></div>
-  <div class="pj">
-    <figure><img src="img/p1.webp" alt="Restaurant building" loading="lazy" width="1280" height="754"><figcaption>Texas Roadhouse</figcaption></figure>
-    <figure><img src="img/p3.webp" alt="Restaurant building" loading="lazy" width="1280" height="746"><figcaption>Bubba's 33 Pizza Burgers Beer</figcaption></figure>
-    <figure><img src="img/p5.webp" alt="School building" loading="lazy" width="640" height="464"><figcaption>Arkansas Middle School</figcaption></figure>
-    <figure><img src="img/p4.webp" alt="Restaurant at dusk" loading="lazy" width="1200" height="635"><figcaption>Walk-On's</figcaption></figure>
-  </div>
-</section>
-
-<section class="contact"><div class="wrap">
-  <h2>Need heat or air?<br>Call today.</h2>
-  <div><a class="num" href="tel:+19038386923">903-838-6923</a><p style="margin-top:1rem"><a class="m" href="mailto:goffinc@aol.com">goffinc@aol.com</a></p><p>5490 W 7th Street, Texarkana, TX</p></div>
-</div></section>
-</main>
-
-<footer><p>Concept mockup by Lucián Švancár, not the official website of Goff Heating / Air Conditioning and Plumbing. Text and photos are taken from the current website for this private preview only.</p></footer>
-<a class="bar" href="tel:+19038386923">Call Goff 903-838-6923</a>
-<script>
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-</script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Heating, Air Conditioning &amp; Plumbing in Texarkana | Goff Heating, Air Conditioning &amp; Plumbing, Texarkana (concept mockup)</title><meta name="description" content="Goff Heating, Air Conditioning and Plumbing, Texarkana TX">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700;62..125,800&family=Libre+Franklin:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="style.css"></head><body>
+<div class="topbar"><div class="w"><span>24 hour on-call available · Family owned and operated</span><span><a href="tel:+19038386923">903-838-6923</a> · <a href="mailto:goffinc@aol.com">goffinc@aol.com</a> · 5490 W 7th Street, Texarkana, TX</span></div></div>
+<header class="hd"><div class="w hdi"><a class="brand" href="index.html"><img src="img/goff-logo-119x67.webp" width="119" height="67" alt="Goff Heating, Air Conditioning &amp; Plumbing"></a>
+<nav class="nav" aria-label="Menu"><a href="index.html" class="cur">Home</a><div class="dd"><button type="button" aria-expanded="false" class="">Services <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><div class="ddm"><a href="services.html">All services</a><a href="services.html#z1">Air Conditioning &amp; Heating</a><a href="services.html#z2">Dryer Vent Cleaning</a><a href="services.html#z3">Air Duct Cleaning</a><a href="services.html#z4">Plumbing</a><a href="services.html#z5">Preventative Maintenance Program</a></div></div><a href="projects.html" class="">Projects</a><a href="testimonials.html" class="">Testimonials</a><a href="blog.html" class="">Blog</a><a href="financing.html" class="">Financing</a><a href="contact.html" class="">Contact</a></nav><div class="hdc"><a class="btn ghost" href="tel:+19038386923">903-838-6923</a><a class="btn " href="contact.html">Request Service</a></div>
+<button class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button></div>
+<div class="mnav" hidden><a href="index.html">Home</a><p>Services</p><a href="services.html">All services</a><a href="services.html#z1">Air Conditioning &amp; Heating</a><a href="services.html#z2">Dryer Vent Cleaning</a><a href="services.html#z3">Air Duct Cleaning</a><a href="services.html#z4">Plumbing</a><a href="services.html#z5">Preventative Maintenance Program</a><a href="projects.html">Projects</a><a href="testimonials.html">Testimonials</a><a href="blog.html">Blog</a><a href="financing.html">Financing</a><a href="contact.html">Contact</a></div></header>
+<main><section class="hero2"><img src="img/Arkansas-Middle-School.webp" width="640" height="464" alt="Goff Heating and Air Conditioning commercial project" fetchpriority="high"><div class="w hh"><p class="eyebrow">Texarkana · Family owned and operated</p><h1>Heating, air conditioning &amp; plumbing in Texarkana</h1><p class="lead">Heating, air conditioning, plumbing, repair, service and installation in Texarkana. Honest, professional work from a company that treats your family like its own.</p><div class="acts"><a class="btn big" href="tel:+19038386923">Call 903-838-6923</a><a class="btn ghost light big" href="contact.html">Send a message</a></div></div></section>
+<section class="trust"><div class="w tg"><div><b>24 hour on-call</b><span>by phone, every day</span></div><div><b>Licensed in AR &amp; TX</b><span>licensed technicians</span></div><div><b>Free estimates</b><span>new or replacement equipment</span></div><div><b>Family owned</b><span>and operated</span></div></div></section>
+<section class="sec"><div class="w"><h2 class="st">What we do</h2><div class="t2grid"><a class="tile2" href="services.html#z1"><span class="n">01</span><h3>Air Conditioning &amp; Heating</h3><p>Repair, service, cleaning and installation. All makes and models, Energy Star equipment, heat pumps and smart thermostats.</p><b>Learn more →</b></a><a class="tile2" href="services.html#z4"><span class="n">02</span><h3>Plumbing</h3><p>Water heaters, drain cleaning with camera inspection, gas pressure testing and slab leak repair.</p><b>Learn more →</b></a><a class="tile2" href="services.html#z5"><span class="n">03</span><h3>Preventative Maintenance Program</h3><p>Become a priority customer: 10% off repairs, priority emergency service and no overtime labor charges.</p><b>Learn more →</b></a><a class="tile2" href="services.html#z3"><span class="n">04</span><h3>Air Duct Cleaning</h3><p>Truck-mounted Push-Pull duct cleaning with external extraction.</p><b>Learn more →</b></a><a class="tile2" href="services.html#z2"><span class="n">05</span><h3>Dryer Vent Cleaning</h3><p>Remove lint build-up, the leading cause of house fires from dryers.</p><b>Learn more →</b></a></div></div></section>
+<section class="sec alt"><div class="w two"><div><h2 class="st">Goff Heating / Air Conditioning and Plumbing</h2><p>We provide only the most exceptional service for your home's heating, air conditioning and plumbing. We hold ourselves to a strict standard so we can give our customers the best, honest and professional work around.</p><p>Our staff works hard to provide you with the best services and products available. We are a family-owned and operated company that treats your family as we do our family. Licensed in Arkansas and Texas, serving greater Texarkana including Miller, Little River, Bowie and Cass Counties.</p><div class="acts"><a class="btn" href="services.html">Our services</a><a class="btn ghost" href="financing.html">Financing options</a></div></div><div><img class="awimg" src="img/northern-hills-baptist-church-1-1000px.webp" width="1000" height="667" alt="Northern Hills Baptist Church" loading="lazy"></div></div></section>
+<section class="sec"><div class="w"><h2 class="st">Projects in Texarkana</h2><div class="pgrid"><a class="pj" href="texas_roadhouse.html"><img src="img/TEXAS-roadhouse.webp" width="1000" height="589" alt="" loading="lazy"><span>Texas Roadhouse</span></a><a class="pj" href="northern_hills_baptist_church.html"><img src="img/northern-hills-baptist-church-1-1000px.webp" width="1000" height="667" alt="" loading="lazy"><span>Northern Hills Baptist Church</span></a><a class="pj" href="va_texarkana_outpatient_clinic.html"><img src="img/VA-Texarkana-Outpatient-Clinic.webp" width="1000" height="650" alt="" loading="lazy"><span>VA Texarkana Outpatient Clinic</span></a><a class="pj" href="arkansas_middle_school.html"><img src="img/Arkansas-Middle-School.webp" width="640" height="464" alt="" loading="lazy"><span>Arkansas Middle School</span></a><a class="pj" href="bubbas_33.html"><img src="img/Bubbas.webp" width="1000" height="582" alt="" loading="lazy"><span>Bubba’s 33</span></a><a class="pj" href="first_baptist_church.html"><img src="img/first-baptist-church.webp" width="500" height="333" alt="" loading="lazy"><span>First Baptist Church</span></a></div><p class="more"><a class="btn ghost" href="projects.html">See all projects →</a></p></div></section>
+<section class="sec alt"><div class="w"><h2 class="st">What customers say</h2><div class="qgrid"><figure class="quote"><div class="stars">★★★★★</div><blockquote>I cannot thank Goff Heating &amp; Air Conditioning in Texarkana enough for what they did for my family! Their honesty, professionalism, and excellent work turned a miserable situation into an experience we will never forget. After another company inspected our air…</blockquote><figcaption><b>ericstone101</b><span>Posted on Google · October 6, 2026</span></figcaption></figure><figure class="quote"><div class="stars">★★★★★</div><blockquote>Thank you Warren for sending someone to our house so quick and helping us. We recommend you for anyone needing hvac or plumbing.</blockquote><figcaption><b>Andrea Bohon</b><span>Posted on Google · September 28, 2026</span></figcaption></figure><figure class="quote"><div class="stars">★★★★★</div><blockquote>Wanna say a big thank you to Cody!! We appreciate you for coming out on the weekend to help solve our issue with our ac at our apartment complex!! Highly recommended Goff to fix the issue!</blockquote><figcaption><b>Allyson Taylor</b><span>Posted on Google · September 19, 2026</span></figcaption></figure></div><p class="more"><a href="testimonials.html">Read all reviews →</a></p></div></section>
+<section class="sec"><div class="w"><h2 class="st">From the blog</h2><div class="bgrid"><a class="bc" href="blog-how-to-prepare-your-home-for-the-winter.html"><img src="img/goff-logo.webp" width="300" height="168" alt="" loading="lazy"><div><h3>How to Prepare Your Home for Winter</h3><p>Winter will be here before we know it! With cooler months just on the horizon, you will want to keep your family as warm as possible in your Texarkana, TX home. Here are a few tips to help you stay comfortable during the upcoming winter season.</p><span>Read more →</span></div></a><a class="bc" href="blog-the-homeowners-guide-to-hvac-troubleshooting.html"><img src="img/troubleshoot-HVAC-2048x1365-1.webp" width="1000" height="666" alt="" loading="lazy"><div><h3>The Homeowner’s Guide to HVAC Troubleshooting</h3><p>As a homeowner, you’ve got a lot to take care of. From the roof to foundation, there’s a lot to keep in mind to make</p><span>Read more →</span></div></a><a class="bc" href="blog-how-to-save-money-on-your-air-conditioning-bill-each-month.html"><img src="img/Save-Money-on-electric-bill.webp" width="512" height="348" alt="" loading="lazy"><div><h3>How To Save Money on Your Air Conditioning Bill Each Month</h3><p>Are you ready for summer to be over yet? July and August are typically the hottest months of the year in Texarkana, with temperatures averaging</p><span>Read more →</span></div></a></div><p class="more"><a href="blog.html">All articles →</a></p></div></section>
+<section class="sec alt"><div class="w two"><div><h2 class="st">Financing</h2><p>Flexible payment options for sustainable home upgrades. Apply in minutes and get approval in seconds.</p><a class="btn" href="financing.html">Financing options</a></div><div><img src="img/goodleap-gradient-cR_4x.webp" width="500" height="123" alt="GoodLeap" loading="lazy"></div></div></section></main><section class="cta"><div class="w"><div><h2>Need heat or air? Call today.</h2><p>24 hour on-call available. Free in-home estimates for new or replacement equipment.</p></div><div class="ctab"><a class="btn  big" href="tel:+19038386923">Call 903-838-6923</a><a class="btn ghost light big" href="contact.html">Send a message</a></div></div></section>
+<footer class="ft"><div class="w fgrid"><div><h3>Goff Heating / Air Conditioning and Plumbing</h3><p>5490 W 7th Street<br>Texarkana, TX</p><p><a href="tel:+19038386923">903-838-6923</a><br><a href="mailto:goffinc@aol.com">goffinc@aol.com</a></p><p><a href="https://www.facebook.com/" rel="noopener">Like us on Facebook</a></p></div><div><h3>Services</h3><p><a href="services.html#z1">Air Conditioning &amp; Heating</a><br><a href="services.html#z5">Preventative Maintenance Program</a><br><a href="services.html#z3">Air Duct Cleaning</a><br><a href="services.html#z2">Dryer Vent Cleaning</a><br><a href="services.html#z4">Plumbing</a></p></div><div><h3>Licenses</h3><p class="sm">HVAC TACLA32681E · ARHVAC0265480520 · AR Class A HVAC 0901230 · Plumbing MP4955 · TXM19568</p><img src="img/ab-seal-horizontal-us.webp" width="200" height="76" alt="BBB Accredited Business" loading="lazy" class="bbb"></div><div><h3>Explore</h3><p><a href="projects.html">Projects</a><br><a href="testimonials.html">Testimonials</a><br><a href="blog.html">Blog</a><br><a href="financing.html">Financing</a><br><a href="contact.html">Contact</a></p></div></div><div class="w legal"><p>Concept mockup by Lucián Švancár, not the official website of Goff Heating / Air Conditioning and Plumbing. Text, reviews and photos are taken from gofftx.com for this private preview only.</p></div></footer>
+<a class="callbar" href="tel:+19038386923">Call Goff 903-838-6923</a>
+<script src="app.js" defer></script></body></html>
