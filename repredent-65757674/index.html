@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Repredent – zubní ordinace Ostrava (ukázkový návrh)</title>
+<meta name="description" content="Zubní ordinace v centru Ostravy: mikroskopické ošetření, Cerec, implantáty. Ukázkový návrh webu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#0E0E11;--pn:#1B1A21;--tx:#ECE9F2;--lav:#C6B4E2;--tq:#6FC9D6;--pk:#D86AA7;--mute:#A9A5B5;--serif:"Instrument Serif",Georgia,serif;--sans:"Figtree",system-ui,sans-serif;--ease:cubic-bezier(.22,.8,.3,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bk);color:var(--tx);font-family:var(--sans);line-height:1.7;font-size:1.05rem;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--tq);outline-offset:3px}
+.nav{position:fixed;z-index:20;inset:0 0 auto 0;display:flex;justify-content:space-between;align-items:center;padding:1.1rem clamp(1.25rem,4vw,3rem);background:rgba(14,14,17,.82);backdrop-filter:blur(8px)}
+.nav .logo{font-family:var(--serif);font-size:1.7rem;text-decoration:none;letter-spacing:.01em}
+.nav a.t{color:var(--tq);text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+
+.hero{position:relative;height:100vh;min-height:620px;overflow:hidden}
+.hero .ph{position:absolute;inset:0}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%;display:block}
+.hero .dim{filter:brightness(.42) contrast(1.1) saturate(.9)}
+.hero .lens{filter:brightness(1.02) contrast(1.05);-webkit-mask-image:radial-gradient(circle var(--r,13vmin) at var(--x,62%) var(--y,40%),#000 96%,transparent 100%);mask-image:radial-gradient(circle var(--r,13vmin) at var(--x,62%) var(--y,40%),#000 96%,transparent 100%);transition:-webkit-mask-position 0s}
+.hero .ring{position:absolute;left:var(--x,62%);top:var(--y,40%);width:calc(var(--r,13vmin)*2);height:calc(var(--r,13vmin)*2);transform:translate(-50%,-50%);border:1px solid var(--tq);border-radius:50%;pointer-events:none}
+.hero .copy{position:absolute;left:clamp(1.25rem,4vw,3rem);bottom:clamp(2.5rem,8vh,5rem);right:clamp(1.25rem,4vw,3rem);z-index:3}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,8vw,8rem);line-height:.95;letter-spacing:-.01em;max-width:12ch}
+.hero .sub{max-width:46ch;color:#D8D4E2;margin-top:1.2rem}
+.pill{position:absolute;top:5.6rem;left:clamp(1.25rem,4vw,3rem);z-index:3;background:var(--pk);color:#14070f;font-weight:600;padding:.55rem 1.1rem}
+.fig{position:absolute;right:1.2rem;bottom:1.2rem;font-size:.7rem;color:var(--mute);z-index:3}
+
+section{padding:clamp(4rem,9vw,8rem) clamp(1.25rem,4vw,3rem)}
+.sticky{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,6vw,6rem);max-width:1320px;margin-inline:auto}
+.sticky .left{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center}
+.sticky .left small{color:var(--lav);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;font-weight:600}
+.sticky .left h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,5vw,4.6rem);line-height:1;margin:1rem 0;transition:opacity .3s ease-out,transform .3s ease-out}
+.sticky .left p{color:var(--mute);max-width:36ch;transition:opacity .3s ease-out}
+.sticky .left.sw h2,.sticky .left.sw p{opacity:0;transform:translateY(12px)}
+.shots figure{height:100vh;display:flex;align-items:center}
+.shots img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;filter:brightness(.8) contrast(1.05)}
+.shots figcaption{font-size:.78rem;color:var(--lav);margin-top:.6rem}
+
+.list{max-width:1320px;margin-inline:auto}
+.list h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4.4vw,4rem);margin-bottom:2.5rem}
+.list ul{list-style:none;padding:0;columns:2;column-gap:4rem}
+.list li{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.2rem);padding:.5rem 0;break-inside:avoid;border-bottom:1px solid #2a2933}
+.list li:hover{color:var(--tq)}
+
+.park{position:relative;overflow:hidden}
+.park .bg{position:absolute;inset:0}
+.park .bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.32) saturate(.8)}
+.park .in{position:relative;z-index:2;max-width:1320px;margin-inline:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:center}
+.park h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4.4vw,4rem);margin-bottom:1rem}
+.route svg{width:100%;height:auto}
+.route .p{stroke:var(--tq);stroke-width:3;fill:none;stroke-dasharray:var(--len,900);stroke-dashoffset:var(--len,900);transition:stroke-dashoffset 1.6s var(--ease)}
+.route.on .p{stroke-dashoffset:0}
+.route .dot{fill:var(--pk);transform-origin:center;transform-box:fill-box}
+.route.on .dot{animation:pulse .9s var(--ease) 1.5s 1}
+@keyframes pulse{50%{transform:scale(1.8)}}
+.park ul{list-style:none;padding:0;margin-top:1rem;color:#D8D4E2}
+.park .k{color:var(--lav);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+
+.hours{background:var(--pn)}
+.hours .in{max-width:1320px;margin-inline:auto;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:3rem}
+.hours .row{display:flex;justify-content:space-between;gap:1rem;font-family:var(--serif);font-size:clamp(1.8rem,3.6vw,3.2rem);border-bottom:1px solid #2f2e39;padding:.6rem 0}
+.hours .row span:last-child{color:var(--lav)}
+.hours h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,3.2rem);margin-bottom:1.5rem}
+.hours a.big{display:block;font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);text-decoration:none;color:var(--tq)}
+.hours p{color:var(--mute)}
+.map{margin-top:1.4rem;display:inline-flex;min-height:48px;align-items:center;border:1px solid var(--tq);padding:.6rem 1.3rem;text-decoration:none;color:var(--tq);font-weight:600}
+
+footer{padding:2rem clamp(1.25rem,4vw,3rem) 5rem;color:var(--mute);font-size:.8rem;border-top:1px solid #23222b}
+.callbar{display:none}
+@media (max-width:860px){
+  .hero{height:auto;min-height:0}
+  .hero .ph{position:relative;height:62vh}
+  .hero .copy{position:relative;left:0;right:0;bottom:auto;padding:1.5rem 1.25rem 2.5rem;background:var(--bk)}
+  .pill{top:5rem}
+  .sticky{grid-template-columns:1fr}
+  .sticky .left{position:static;height:auto;padding:0 0 1rem}
+  .shots figure{height:auto;margin-bottom:1.4rem}
+  .list ul{columns:1}
+  .park .in,.hours .in{grid-template-columns:1fr}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--tq);color:#06181b;justify-content:center;align-items:center;min-height:56px;font-weight:600;text-decoration:none;transition:transform .25s var(--ease)}
+  .callbar.hide{transform:translateY(100%)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.route .p{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<header class="nav"><a class="logo" href="#">Repredent</a><a class="t" href="tel:+420734312743">+420 734 312 743</a></header>
+
+<main>
+<div class="hero" id="hero">
+  <div class="ph">
+    <img class="dim" src="img/g1.webp" alt="Ordinace s mikroskopem a černým zubním křeslem" width="1200" height="800" fetchpriority="high">
+    <img class="lens" src="img/g1.webp" alt="" width="1200" height="800" aria-hidden="true">
+    <span class="ring" aria-hidden="true"></span>
+    <p class="fig">Foto: stávající web ordinace</p>
+  </div>
+  <p class="pill">Přijímáme nové pacienty.</p>
+  <div class="copy">
+    <h1>Zubní ordinace v centru Ostravy</h1>
+    <p class="sub">Mikroskopické ošetření, keramické korunky, implantáty a CAD/CAM systém Cerec na Českobratrské.</p>
+  </div>
+</div>
+
+<section>
+  <div class="sticky">
+    <div class="left" id="left">
+      <small>Ordinace</small>
+      <h2 id="lh">Mikroskopické ošetření</h2>
+      <p id="lp">Českobratrská 7/2227, Ostrava. Klimatizace a Wi-Fi zdarma.</p>
+    </div>
+    <div class="shots">
+      <figure data-h="Mikroskopické ošetření" data-p="Českobratrská 7/2227, Ostrava. Klimatizace a Wi-Fi zdarma."><div><img src="img/hero.webp" alt="Ošetřovna s levandulovými stěnami" loading="lazy" width="1200" height="800"><figcaption>Ošetřovna</figcaption></div></figure>
+      <figure data-h="CAD CAM systém Cerec" data-p="Keramické výplně, korunky a můstky."><div><img src="img/g3.webp" alt="Bílé zubní křeslo a rostliny" loading="lazy" width="1200" height="800"><figcaption>Druhá ošetřovna</figcaption></div></figure>
+      <figure data-h="Čekárna" data-p="Klimatizace a Wi-Fi zdarma."><div><img src="img/g2.webp" alt="Čekárna s obrazy" loading="lazy" width="1200" height="800"><figcaption>Čekárna</figcaption></div></figure>
+    </div>
+  </div>
+</section>
+
+<section class="list">
+  <h2>Co ošetřujeme</h2>
+  <ul>
+    <li>Vstupní prohlídka</li><li>Mikroskopické ošetření</li><li>Ošetření kazů</li><li>Implantáty</li><li>Keramické výplně, korunky a můstky</li><li>Estetické fazety</li><li>Inhalační analgetikum</li><li>CAD CAM systém Cerec</li><li>Dentální hygiena</li><li>Bělení zubů</li>
+  </ul>
+</section>
+
+<section class="park">
+  <div class="bg"><img src="img/g2.webp" alt="" loading="lazy"></div>
+  <div class="in">
+    <div>
+      <p class="k">Doprava</p>
+      <h2>Z Prokešova náměstí</h2>
+      <p>Pacientům nabízíme zdarma parkování v podzemních Garážích Ostrava na Prokešově náměstí, asi 300 m od ordinace.</p>
+      <ul><li>MHD: Husův sad, Most Pionýrů, Stodolní, Důl Jindřich</li><li>Autem: Prokešovo náměstí</li></ul>
+    </div>
+    <div class="route" id="route">
+      <svg viewBox="0 0 500 220" role="img" aria-label="Schéma cesty z garáží na Prokešově náměstí do ordinace, asi 300 metrů">
+        <path class="p" d="M30 170 C120 170 130 60 230 80 S380 150 450 50" pathLength="900"/>
+        <circle cx="30" cy="170" r="7" fill="#ECE9F2"/><circle class="dot" cx="450" cy="50" r="8"/>
+        <text x="30" y="205" fill="#ECE9F2" font-size="15" font-family="Figtree,sans-serif">Garáže Ostrava</text>
+        <text x="370" y="32" fill="#ECE9F2" font-size="15" font-family="Figtree,sans-serif">Ordinace</text>
+        <text x="215" y="125" fill="#C6B4E2" font-size="14" font-family="Figtree,sans-serif">asi 300 m</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="hours" id="kontakt">
+  <div class="in">
+    <div>
+      <h2>Ordinační hodiny</h2>
+      <div class="row"><span>Pondělí–Čtvrtek</span><span>8:00–17:00</span></div>
+      <div class="row"><span>Pátek</span><span>8:00–12:00</span></div>
+      <div class="row"><span>Sobota, neděle</span><span>zavřeno</span></div>
+    </div>
+    <div>
+      <h2>Kontakt</h2>
+      <a class="big" href="tel:+420734312743">+420 734 312 743</a>
+      <a class="big" style="font-size:clamp(1.3rem,2.4vw,1.9rem);margin-top:.5rem" href="mailto:info@repredent.cz">info@repredent.cz</a>
+      <p style="margin-top:1rem">MUDr. Igor Kuczinský<br>Českobratrská 7/2227, 702 00 Ostrava</p>
+      <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%C4%8Cesko%C5%A1kobratrsk%C3%A1+7+Ostrava">Otevřít v mapách</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Ukázkový návrh webu. Texty podle stávajícího webu repredent.cz. Fotografie jsou převzaté ze stávajícího webu ordinace pouze pro tento soukromý návrh, nepublikovat bez souhlasu ordinace.</footer>
+<a class="callbar" id="callbar" href="tel:+420734312743">Zavolat do ordinace</a>
+
+<script>
+(function(){
+  var hero=document.getElementById('hero'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var mx=62,my=40,tx=62,ty=40,ph=hero.querySelector('.ph');
+  function set(){hero.style.setProperty('--x',mx+'%');hero.style.setProperty('--y',my+'%');ph.style.setProperty('--x',mx+'%');ph.style.setProperty('--y',my+'%')}
+  set();
+  if(!reduce){
+    var raf;
+    function loop(){mx+=(tx-mx)*.12;my+=(ty-my)*.12;set();if(Math.abs(tx-mx)>.05||Math.abs(ty-my)>.05)raf=requestAnimationFrame(loop);else raf=0}
+    hero.addEventListener('pointermove',function(e){var r=ph.getBoundingClientRect();tx=(e.clientX-r.left)/r.width*100;ty=(e.clientY-r.top)/r.height*100;if(!raf)raf=requestAnimationFrame(loop)});
+    var t=0;addEventListener('scroll',function(){if(innerWidth>860)return;var p=Math.min(1,scrollY/Math.max(1,hero.offsetHeight));tx=70-p*20;ty=42+p*10;if(!raf)raf=requestAnimationFrame(loop)},{passive:true});
+  }
+  var lh=document.getElementById('lh'),lp=document.getElementById('lp'),left=document.getElementById('left');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=e.target;left.classList.add('sw');setTimeout(function(){lh.textContent=f.dataset.h;lp.textContent=f.dataset.p;left.classList.remove('sw')},reduce?0:300)}})},{rootMargin:'-45% 0px -45% 0px'});
+  document.querySelectorAll('.shots figure').forEach(function(f){io.observe(f)});
+  var rt=document.getElementById('route');
+  new IntersectionObserver(function(es,o){if(es[0].isIntersecting){rt.classList.add('on');o.disconnect()}},{threshold:.4}).observe(rt);
+  var cb=document.getElementById('callbar');
+  new IntersectionObserver(function(es){cb.classList.toggle('hide',es[0].isIntersecting)},{threshold:.15}).observe(document.getElementById('kontakt'));
+})();
+</script>
+</body>
+</html>

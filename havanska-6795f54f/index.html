@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Havanská DENT – zubní ordinace Ostrava-Poruba (ukázkový návrh)</title>
+<meta name="description" content="Zubní ordinace v Ostravě-Porubě na Havanské ulici. Ukázkový návrh webu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAFB; --line:#E4E5E9; --mute:#5B606B; --ink:#15171C; --pur:#8A2A72; --purbg:#F3E6EF;
+  --mono:"IBM Plex Mono",ui-monospace,monospace; --sans:"Hanken Grotesk",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.8,.3,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1240px,100% - 3rem);margin-inline:auto}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.label{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+
+.top{position:absolute;inset:0 0 auto 0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.25rem clamp(1.5rem,4vw,3rem)}
+.brand{font-weight:600;font-size:1.05rem;text-decoration:none;letter-spacing:.01em}
+.brand span{color:var(--pur)}
+.top a.tel{font-family:var(--mono);font-size:.9rem;text-decoration:none;background:var(--bg);padding:.55rem .9rem;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid var(--pur)}
+
+.hero{position:relative;min-height:min(92vh,900px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--bg)}
+.hero-copy{padding:9rem clamp(1.5rem,4vw,3rem) 4rem;display:flex;flex-direction:column;justify-content:space-between;gap:3rem;position:relative;z-index:2}
+h1{font-weight:300;font-size:clamp(2.6rem,5.6vw,5.6rem);line-height:1.02;letter-spacing:-.025em;max-width:11ch}
+.contact-line{display:flex;flex-wrap:wrap;gap:.5rem 2rem;font-family:var(--mono);font-size:.95rem}
+.contact-line a{text-decoration:none;border-bottom:1px solid var(--line);padding:.35rem 0;min-height:44px;display:inline-flex;align-items:center}
+.contact-line a:hover{border-color:var(--pur)}
+.hero-img{position:relative;overflow:hidden;background:#fff}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 60%;display:block}
+.hero-img .bw{clip-path:inset(0 0 0 0);transition:clip-path 900ms var(--ease) .3s}
+.loaded .hero-img .bw{clip-path:inset(0 100% 0 0)}
+.notice{position:absolute;left:0;right:0;bottom:0;background:var(--pur);color:#fff;padding:1rem clamp(1.5rem,4vw,3rem);font-weight:600;display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;z-index:3}
+.notice .mono{font-weight:400;font-size:.82rem;opacity:.9}
+
+section{padding:clamp(4rem,9vw,8rem) 0}
+h2{font-weight:300;font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.02em;line-height:1.1;margin:.6rem 0 2.5rem;max-width:18ch}
+
+.week{display:grid;grid-template-columns:7.5rem 1fr;gap:.9rem 1.2rem;align-items:center}
+.axis{grid-column:2;display:grid;grid-template-columns:repeat(11,1fr);font-family:var(--mono);font-size:.72rem;color:var(--mute)}
+.axis span{border-left:1px solid var(--line);padding-left:.35rem}
+.day{font-weight:600}
+.track{position:relative;height:2.4rem;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px calc(100%/11));background-color:#fff;border:1px solid var(--line)}
+.bar{position:absolute;top:3px;bottom:3px;background:var(--ink);transform-origin:left;transform:scaleX(0);transition:transform 600ms var(--ease)}
+.bar.pur{background:var(--pur)}
+.in .bar{transform:scaleX(1)}
+.bar .t{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:.78rem;color:#fff;white-space:nowrap}
+.week-note{grid-column:2;font-family:var(--mono);font-size:.85rem;color:var(--mute);margin-top:.6rem}
+
+.svc{list-style:none;padding:0;border-top:1px solid var(--line)}
+.svc li{display:grid;grid-template-columns:repeat(12,1fr);gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.svc b{grid-column:1/6;font-weight:600;font-size:1.2rem}
+.svc span{grid-column:6/12;color:var(--mute)}
+
+.price-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.price-img{position:relative;margin-top:2rem}
+.price-img img{width:100%;height:auto;display:block;aspect-ratio:3/2;object-fit:cover;object-position:50% 25%}
+.receipt{max-width:34rem;margin-left:auto;font-family:var(--mono);font-size:.95rem;width:100%}
+.receipt .row{display:flex;gap:.5rem;align-items:baseline;padding:.55rem 0;opacity:0;transform:translateY(8px);transition:opacity .2s ease-out,transform .2s ease-out}
+.receipt .row i{flex:1;border-bottom:1px dotted var(--mute);transform:translateY(-4px);transition:border-color .15s}
+.receipt .row:hover i{border-color:var(--pur)}
+.receipt .row b{font-weight:500}
+.in .row{opacity:1;transform:none}
+.receipt .fine{margin-top:1.5rem;color:var(--mute);font-size:.82rem}
+
+.team{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.team p{font-weight:300;font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.2;letter-spacing:-.015em;border-top:1px solid var(--ink);padding-top:1rem}
+.team small{display:block;font-family:var(--mono);font-size:.8rem;color:var(--mute);margin-top:.5rem;letter-spacing:.04em}
+
+.kontakt{background:#fff;border-top:1px solid var(--line)}
+.k-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,5vw,5rem)}
+.k-list{display:grid;gap:1.4rem;font-family:var(--mono)}
+.k-list a{text-decoration:none}
+.k-list .big{font-family:var(--sans);font-weight:300;font-size:clamp(1.8rem,3.4vw,2.8rem);letter-spacing:-.02em;line-height:1.1;display:block}
+.map{aspect-ratio:4/3;border:1px solid var(--line);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+
+footer{padding:2.5rem 0 5rem;font-size:.82rem;color:var(--mute);font-family:var(--mono)}
+footer p+p{margin-top:.5rem}
+
+.callbar{display:none}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding:6.5rem 1.5rem 2rem}
+  .hero-img{height:62vw;min-height:280px}
+  .notice{position:static}
+  .week{grid-template-columns:1fr}
+  .axis{display:none}
+  .week .day{margin-top:.8rem}
+  .track{height:3rem}
+  .week-note{grid-column:1}
+  .svc li{display:block}
+  .svc b{display:block}
+  .price-grid,.k-grid{grid-template-columns:1fr}
+  .price-img{margin-top:0;order:2}
+  .price-img img{aspect-ratio:3/2}
+  .team{grid-template-columns:1fr}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9;background:var(--ink);color:#fff;justify-content:space-between;align-items:center;padding:.6rem 1.25rem;font-family:var(--mono);font-size:.92rem;transform:translateY(0);transition:transform .25s var(--ease)}
+  .callbar a{background:var(--pur);color:#fff;text-decoration:none;padding:.7rem 1.4rem;min-height:44px;display:inline-flex;align-items:center;font-weight:500}
+  .callbar.hide{transform:translateY(100%)}
+  footer{padding-bottom:7rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .bar{transform:scaleX(1)}
+  .receipt .row{opacity:1;transform:none}
+  .hero-img .bw{clip-path:inset(0 100% 0 0)}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">Havanská <span>DENT</span></a>
+  <a class="tel" href="tel:+420720077793">+420 720 077 793</a>
+</header>
+
+<main>
+<div class="hero">
+  <div class="hero-copy">
+    <h1>Zubní ordinace v Ostravě-Porubě</h1>
+    <div>
+      <p style="max-width:34ch;margin-bottom:1.6rem;color:var(--mute)">Konzervační, endodontické a protetické ošetření, stomatochirurgie a dentální hygiena na Havanské ulici.</p>
+      <div class="contact-line">
+        <a href="https://maps.google.com/?q=49.833974,18.169597">Havanská 786, Ostrava-Poruba</a>
+        <a href="tel:+420720077793">+420 720 077 793</a>
+        <a href="mailto:info@havanskadent.cz">info@havanskadent.cz</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="img/hero-full.png" alt="Zubní ordinace s fialovým zubním křeslem" width="800" height="534" fetchpriority="high">
+    <img class="bw" src="img/hero-sel.webp" alt="" width="800" height="534">
+    <div class="notice"><span>V současné době nové pacienty nepřijímáme.</span><span class="mono">Pacienti ordinace: ordinační hodiny níže.</span></div>
+  </div>
+</div>
+
+<section id="tyden">
+  <div class="wrap" data-reveal>
+    <p class="label">Ordinační hodiny</p>
+    <h2>Týden v ordinaci</h2>
+    <div class="week">
+      <div class="axis" aria-hidden="true"><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></div>
+      <div class="day">Pondělí</div><div class="track"><div class="bar" style="left:4.55%;width:72.7%;transition-delay:0ms"><span class="t">7:30–15:30</span></div></div>
+      <div class="day">Úterý</div><div class="track"><div class="bar" style="left:4.55%;width:72.7%;transition-delay:60ms"><span class="t">7:30–15:30</span></div></div>
+      <div class="day">Čtvrtek</div><div class="track"><div class="bar" style="left:4.55%;width:72.7%;transition-delay:120ms"><span class="t">7:30–15:30</span></div></div>
+      <div class="day">Pátek</div><div class="track"><div class="bar" style="left:4.55%;width:45.5%;transition-delay:180ms"><span class="t">7:30–12:30</span></div></div>
+      <div class="day" style="color:var(--pur)">Středa</div><div class="track"><div class="bar pur" style="left:36.4%;width:63.6%;transition-delay:420ms"><span class="t">11:00–18:00</span></div></div>
+      <p class="week-note">Akutní ošetření pouze po telefonické dohodě.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;border-block:1px solid var(--line)">
+  <div class="wrap">
+    <p class="label">Co ošetřujeme</p>
+    <h2>Služby</h2>
+    <ul class="svc">
+      <li><b>Endodontické ošetření</b><span>Ošetření infikovaného kořenového kanálku zubu, čištění a zaplnění.</span></li>
+      <li><b>Konzervační ošetření</b><span>Restaurace a zhotovení estetických výplní.</span></li>
+      <li><b>Protetické ošetření</b><span>Restaurace destruovaných zubů pomocí korunek a náhrada chybějících zubů můstky.</span></li>
+      <li><b>Dentální hygiena</b><span>Hygienická instruktáž, nácvik správného pečování o chrup.</span></li>
+      <li><b>Stomatochirurgie</b><span>Extrakce destruovaných zubů.</span></li>
+      <li><b>Anestezie</b><span>Látky zaručující bezbolestné ošetření.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap price-grid" data-reveal>
+    <div class="price-img"><img src="img/g1-bw.webp" alt="Dvě členky týmu ordinace s zubními kartáčky" loading="lazy" width="800" height="534"></div>
+    <div>
+      <p class="label" style="text-align:left">Ceník</p>
+      <h2>Ceník jako účtenka</h2>
+      <div class="receipt">
+        <div class="row" style="transition-delay:0ms"><span>Vstupní vyšetření (registrace)</span><i></i><b>hradí pojišťovna</b></div>
+        <div class="row" style="transition-delay:40ms"><span>Preventivní prohlídka (1× ročně)</span><i></i><b>hradí pojišťovna</b></div>
+        <div class="row" style="transition-delay:80ms"><span>Dentální hygiena celková</span><i></i><b>1 400 Kč</b></div>
+        <div class="row" style="transition-delay:120ms"><span>Endodontické ošetření, 1 kanálek</span><i></i><b>1 400 Kč</b></div>
+        <div class="row" style="transition-delay:160ms"><span>Korunka celokeramická</span><i></i><b>7 000 Kč</b></div>
+        <div class="row" style="transition-delay:200ms"><span>Bělení</span><i></i><b>7 000 Kč</b></div>
+        <p class="fine">Ceník platný od 1. 1. 2025 podle webu ordinace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="label">Tým</p>
+    <h2>Kdo vás ošetří</h2>
+    <div class="team">
+      <p>MDDr. Markéta Roiková<small>zubní lékařka</small></p>
+      <p>Vladimíra Večeřová<small>zubní instrumentářka</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap k-grid">
+    <div class="k-list">
+      <div><p class="label">Jak se objednat</p><p style="font-family:var(--sans);margin-top:.4rem">Telefonicky nebo e-mailem. Akutní bolest řešte telefonicky.</p></div>
+      <a class="big" href="tel:+420720077793">+420 720 077 793</a>
+      <a class="big" style="font-size:clamp(1.2rem,2.2vw,1.7rem)" href="mailto:info@havanskadent.cz">info@havanskadent.cz</a>
+      <div><p class="label">Adresa</p><p>Havanská 786<br>708 00 Ostrava-Poruba</p><p style="color:var(--mute);margin-top:.6rem;font-size:.85rem">49.833974 N, 18.169597 E</p></div>
+    </div>
+    <div class="map"><iframe title="Mapa ordinace" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=18.1650%2C49.8315%2C18.1745%2C49.8365&amp;layer=mapnik&amp;marker=49.833974%2C18.169597"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Ukázkový návrh webu. Texty a ceny podle stávajícího webu havanskadent.cz, před nasazením ověřit s ordinací. Fotografie jsou převzaté ze stávajícího webu ordinace pouze pro tento soukromý návrh, nepublikovat bez souhlasu ordinace.</p>
+  </div>
+</footer>
+
+<div class="callbar" id="callbar"><span>Havanská DENT</span><a href="tel:+420720077793">Zavolat</a></div>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  requestAnimationFrame(function(){document.documentElement.classList.add('loaded')});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.35});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el)});
+  var cb=document.getElementById('callbar'),k=document.getElementById('kontakt');
+  var io2=new IntersectionObserver(function(es){cb.classList.toggle('hide',es[0].isIntersecting)},{threshold:.15});
+  io2.observe(k);
+});
+</script>
+</body>
+</html>

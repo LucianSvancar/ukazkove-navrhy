@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dentalstyl – zubní ordinace Ostrava-Hrabůvka (ukázkový návrh)</title>
+<meta name="description" content="Zubní ordinace v Ostravě-Hrabůvce: prohlídky, estetická a dětská stomatologie, bělení. Ukázkový návrh webu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,1&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFCF7;--or:#EE7A12;--ink:#2B1C14;--almond:#F6E3CF;--grey:#6E6660;--sun:#F7B32B;--serif:"Fraunces",Georgia,serif;--sans:"Karla",system-ui,sans-serif;--ease:cubic-bezier(.22,.8,.3,1);--pw:300px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.08rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;font-variation-settings:"SOFT" 100,"WONK" 1;line-height:1.05;letter-spacing:-.01em}
+
+.panel{position:fixed;left:0;top:0;bottom:0;width:var(--pw);background:var(--almond);padding:2rem 1.6rem;display:flex;flex-direction:column;justify-content:space-between;z-index:10}
+.panel .logo{font-family:var(--serif);font-weight:600;font-variation-settings:"SOFT" 100,"WONK" 1;font-size:1.9rem;color:var(--or);text-decoration:none;line-height:1}
+.panel .loc{color:var(--grey);margin-top:.5rem}
+.panel .tel{font-family:var(--serif);font-weight:600;font-size:1.6rem;text-decoration:none;display:block;margin-bottom:.8rem}
+.panel .today{background:var(--bg);padding:.8rem 1rem;margin-bottom:1rem;font-size:.95rem}
+.panel .today b{display:block;color:var(--or)}
+.btn{background:var(--or);color:var(--ink);font-weight:700;text-decoration:none;padding:.95rem 1.5rem;min-height:48px;display:inline-flex;align-items:center;justify-content:center;border:0;font-size:1rem;font-family:var(--sans);cursor:pointer;transition:transform .15s var(--ease)}
+.btn:active{transform:scale(.97)}
+
+main{margin-left:var(--pw);position:relative}
+#stroke{position:absolute;left:14px;top:0;width:60px;height:100%;pointer-events:none;z-index:1;overflow:visible}
+#stroke path{fill:none;stroke:var(--or);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.in-pad{padding-inline:clamp(2rem,5vw,5rem);position:relative;z-index:2}
+
+.hero{position:relative;height:min(88vh,820px);min-height:520px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:35% 40%;display:block;filter:sepia(.15) saturate(.92)}
+.hero .cap{position:absolute;right:1rem;bottom:.6rem;font-size:.72rem;color:#fff;opacity:.9}
+.hero h1{position:absolute;left:0;bottom:0;background:var(--almond);padding:1.6rem clamp(1.6rem,3vw,3rem) 1.4rem;font-size:clamp(2.4rem,4.6vw,4.6rem);max-width:min(78%,820px)}
+.hero p.s{position:absolute;right:0;top:2rem;background:var(--bg);padding:1rem 1.4rem;max-width:26ch;font-weight:700}
+
+section{padding-block:clamp(4rem,8vw,7rem)}
+h2{font-size:clamp(2rem,3.8vw,3.4rem);margin-bottom:1.6rem}
+.eyebrow{font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:var(--or);margin-bottom:.6rem}
+
+.ba{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+.slider{position:relative;aspect-ratio:492/714;max-height:560px;overflow:hidden;border-radius:24px;background:var(--almond);margin-inline:auto;width:100%;max-width:520px}
+.slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.slider .po{clip-path:inset(0 0 0 var(--p,50%))}
+.slider input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.slider .h{position:absolute;top:0;bottom:0;left:var(--p,50%);width:4px;background:#fff;transform:translateX(-50%);pointer-events:none}
+.slider .h::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;border-radius:50%;background:var(--or);border:3px solid #fff;transform:translate(-50%,-50%)}
+.slider .lab{position:absolute;top:1rem;padding:.2rem .7rem;background:var(--bg);font-weight:700;font-size:.8rem}
+.slider .lab.a{left:1rem}.slider .lab.b{right:1rem}
+.reveal{clip-path:inset(100% 0 0 0 round 24px);transition:clip-path .7s var(--ease)}
+.reveal.in{clip-path:inset(0 round 8px)}
+.ba small{display:block;font-size:.75rem;color:var(--grey);margin-top:.6rem}
+
+.recipe{display:grid;grid-template-columns:7fr 5fr;gap:3rem}
+.recipe ul{list-style:none;padding:0}
+.recipe .big li{font-family:var(--serif);font-weight:600;font-variation-settings:"SOFT" 100,"WONK" 1;font-size:clamp(1.6rem,2.6vw,2.3rem);padding:.7rem 0;border-bottom:2px solid var(--almond)}
+.recipe .small li{padding:.55rem 0;border-bottom:1px solid var(--almond)}
+.recipe .small{padding-top:.4rem}
+
+.gap{background:var(--almond)}
+.days{display:grid;gap:.9rem}
+.day{display:grid;grid-template-columns:6.5rem 1fr;align-items:center;gap:1rem}
+.day b{font-weight:700}
+.trk{position:relative;height:2.6rem;background:#fff;border-radius:10px}
+.seg{position:absolute;top:4px;bottom:4px;background:var(--or);border-radius:7px;transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease);display:flex;align-items:center;padding-left:.6rem;font-weight:700;font-size:.82rem;white-space:nowrap;overflow:hidden}
+.in .seg{transform:scaleX(1)}
+.pauza{font-weight:700;color:var(--ink);margin-top:1rem;display:flex;align-items:center;gap:.6rem}
+.pauza svg{width:56px;height:24px;flex:none}
+
+.how{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.how .sig{font-family:var(--serif);font-weight:600;font-variation-settings:"SOFT" 100,"WONK" 1;font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.how .btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.4rem}
+.btn.alt{background:transparent;border:2px solid var(--ink)}
+.hrs{margin-top:1rem;color:var(--grey);font-size:.95rem}
+footer{margin-left:var(--pw);padding:2rem clamp(2rem,5vw,5rem) 4rem;color:var(--grey);font-size:.82rem;background:var(--almond);position:relative;z-index:2}
+.bar{display:none}
+
+@media (max-width:900px){
+  :root{--pw:0px}
+  .panel{display:none}
+  main,footer{margin-left:0}
+  #stroke{display:none}
+  .hero{height:60vh;min-height:360px}
+  .hero h1{max-width:92%;font-size:clamp(2rem,8vw,3rem)}
+  .hero p.s{display:none}
+  .ba,.recipe,.how{grid-template-columns:1fr}
+  .day{grid-template-columns:1fr;gap:.2rem}
+  .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--almond);padding:.6rem 1rem;justify-content:space-between;align-items:center;gap:1rem;box-shadow:0 -1px 0 rgba(43,28,20,.12)}
+  .bar span{font-weight:700;font-size:.92rem}
+  .bar a{white-space:nowrap}
+  footer{padding-bottom:6rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.reveal{clip-path:none}.seg{transform:none}}
+</style>
+</head>
+<body>
+<aside class="panel">
+  <div>
+    <a class="logo" href="#">Dentalstyl</a>
+    <p class="loc">Ostrava-Hrabůvka</p>
+  </div>
+  <div>
+    <div class="today" id="todayP"><b>Dnes</b><span></span></div>
+    <a class="tel" href="tel:+420728233433">+420 728 233 433</a>
+    <a class="btn" href="tel:+420728233433">Objednat se</a>
+  </div>
+</aside>
+
+<main id="main">
+  <svg id="stroke" aria-hidden="true" preserveAspectRatio="none"><path id="sp" d=""/></svg>
+
+  <div class="hero">
+    <img src="img/hero.webp" alt="Zubní prohlídka" width="1280" height="500" fetchpriority="high">
+    <p class="cap">Ilustrační fotografie</p>
+    <p class="s">Prohlídky, estetická a dětská stomatologie, parodontologie.</p>
+    <h1>Zubní ordinace v Ostravě-Hrabůvce</h1>
+  </div>
+
+  <section class="in-pad" id="bely">
+    <div class="ba">
+      <div>
+        <p class="eyebrow">Ordinační bělení</p>
+        <h2>Bělení BEYOND do 60 minut</h2>
+        <p>BEYOND, bělejší zuby do 60 minut.</p>
+        <small>Ilustrační fotografie. Posuňte jezdec pro porovnání.</small>
+      </div>
+      <div class="slider reveal" id="sl" style="--p:50%">
+        <img class="pr" src="img/pred.webp" alt="Zuby před bělením (ilustrace)" loading="lazy">
+        <img class="po" src="img/po.webp" alt="Zuby po bělení (ilustrace)" loading="lazy">
+        <span class="lab a">Před</span><span class="lab b">Po</span>
+        <span class="h"></span>
+        <input type="range" min="0" max="100" value="50" aria-label="Porovnání před a po bělení" id="rg">
+      </div>
+    </div>
+  </section>
+
+  <section class="in-pad" style="padding-top:0">
+    <p class="eyebrow">Služby</p>
+    <h2>Co u nás ošetříme</h2>
+    <div class="recipe">
+      <ul class="big"><li>Dětská stomatologie</li><li>Akutní ošetření v ordinaci</li><li>Stomatologické ošetření na splátky</li></ul>
+      <ul class="small"><li>Zubní prohlídky: vstupní a preventivní</li><li>Estetická stomatologie</li><li>Protetická stomatologie</li><li>Záchovná stomatologie a endodoncie</li><li>Parodontologie</li><li>Bezbolestné ošetření</li><li>Ordinační bělení zubů</li></ul>
+    </div>
+  </section>
+
+  <section class="gap in-pad" id="hodiny" data-in>
+    <p class="eyebrow">Ordinační hodiny</p>
+    <h2>Polední pauza</h2>
+    <div class="days" id="days"></div>
+    <p class="pauza"><svg viewBox="0 0 56 24" aria-hidden="true"><path d="M2 20 C 14 20 18 4 40 6 M32 2 L42 6 L33 13" fill="none" stroke="#EE7A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Pauza mezi 12:00 a 12:45</p>
+  </section>
+
+  <section class="in-pad" id="kontakt">
+    <div class="how">
+      <div>
+        <p class="eyebrow">Jak se objednat</p>
+        <h2>Telefonicky, e-mailem nebo online formulářem</h2>
+        <div class="btns"><a class="btn" href="tel:+420728233433">Zavolat</a><a class="btn alt" href="mailto:ordinace@dentalstyl.cz">Napsat e-mail</a></div>
+        <p class="hrs">ordinace@dentalstyl.cz · Dvouletky 1209/58, 700 30 Ostrava-Hrabůvka</p>
+      </div>
+      <div>
+        <p class="sig">MUDr. Ludmila Dufková</p>
+        <p style="color:var(--grey);margin-top:.4rem">Dvouletky 1209/58, Ostrava-Hrabůvka</p>
+        <a class="btn alt" style="margin-top:1.2rem" href="https://www.google.com/maps/search/?api=1&amp;query=Dvouletky+1209%2F58+Ostrava">Otevřít v mapách</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>Ukázkový návrh webu. Texty podle stávajícího webu dentalstyl.cz. Fotografie jsou ilustrační, převzaté ze stávajícího webu pouze pro tento soukromý návrh.</footer>
+<div class="bar"><span id="todayB">Dnes</span><a class="btn" href="tel:+420728233433">Zavolat</a></div>
+
+<script>
+(function(){
+  var H=[["Pondělí",[["7:30","12:00"],["12:45","16:00"]]],["Úterý",[["7:30","12:00"],["12:45","16:00"]]],["Středa",[["7:30","12:00"],["12:45","16:00"]]],["Čtvrtek",[["10:00","12:00"],["12:45","16:00"]]],["Pátek",[["7:30","12:00"]]]];
+  var S=7,E=16.5;
+  function m(t){var a=t.split(':');return +a[0]+a[1]/60}
+  var d=document.getElementById('days');
+  H.forEach(function(r,i){
+    var row=document.createElement('div');row.className='day';
+    var s='';r[1].forEach(function(p,j){var l=(m(p[0])-S)/(E-S)*100,w=(m(p[1])-m(p[0]))/(E-S)*100;s+='<div class="seg" style="left:'+l+'%;width:'+w+'%;transition-delay:'+(i*60+j*40)+'ms">'+p[0]+'–'+p[1]+'</div>'});
+    row.innerHTML='<b>'+r[0]+'</b><div class="trk">'+s+'</div>';d.appendChild(row);
+  });
+  var n=new Date(),di=n.getDay()-1,tx='Dnes zavřeno';
+  if(di>=0&&di<5){tx='Dnes '+H[di][1].map(function(p){return p[0]+'–'+p[1]}).join(', ')}
+  document.querySelector('#todayP span').textContent=tx.replace(/^Dnes /,'');document.getElementById('todayB').textContent=tx;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.25});
+  document.querySelectorAll('[data-in],.reveal').forEach(function(el){io.observe(el)});
+  var sl=document.getElementById('sl'),rg=document.getElementById('rg');
+  rg.addEventListener('input',function(){sl.style.setProperty('--p',rg.value+'%')});
+  var done=false;
+  new IntersectionObserver(function(es,o){if(es[0].isIntersecting&&!done&&!matchMedia('(prefers-reduced-motion:reduce)').matches){done=true;o.disconnect();var t0=null;(function f(t){if(!t0)t0=t;var k=(t-t0)/900;if(k>=1){sl.style.setProperty('--p','50%');return}var v=50-15*Math.sin(k*Math.PI);sl.style.setProperty('--p',v+'%');requestAnimationFrame(f)})(performance.now())}},{threshold:.8}).observe(sl);
+  var main=document.getElementById('main'),svg=document.getElementById('stroke'),sp=document.getElementById('sp');
+  function draw(){
+    var h=main.offsetHeight,p='M30 0',y=0,x=30,k=0;
+    while(y<h){y+=420;x=(k%2?10:50);p+=' C '+(x+30)+' '+(y-300)+' '+(x-30)+' '+(y-140)+' '+x+' '+y;k++}
+    sp.setAttribute('d',p);svg.setAttribute('viewBox','0 0 60 '+h);svg.style.height=h+'px';
+    var L=sp.getTotalLength();sp.style.strokeDasharray=L;
+    function upd(){var pr=Math.min(1,(scrollY+innerHeight*.6)/h);sp.style.strokeDashoffset=L*(1-pr)}
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){sp.style.strokeDashoffset=0}else{upd();addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true})}
+  }
+  addEventListener('load',draw);
+})();
+</script>
+</body>
+</html>

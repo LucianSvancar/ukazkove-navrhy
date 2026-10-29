@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>G A Dent – Zuby v Ostravě (ukázkový návrh)</title>
+<meta name="description" content="Ortodoncie, stomatologie a chirurgie v centru Ostravy. Ukázkový návrh webu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--graf:#2A2C2E;--coal:#141516;--conc:#E8E6E0;--lime:#C6D52C;--rust:#8E4526;--cool:#9A9C9E;--head:"Big Shoulders Display",Impact,sans-serif;--body:"Manrope",system-ui,sans-serif;--ease:cubic-bezier(.22,.8,.3,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--conc);color:var(--coal);font-family:var(--body);line-height:1.6;font-size:1.02rem;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1280px,100% - 3rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);font-weight:800;line-height:.95;letter-spacing:.005em}
+.eyebrow{font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+
+.nav{position:fixed;z-index:20;inset:0 0 auto 0;display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1.5rem,4vw,3rem);color:var(--conc);background:var(--graf)}
+.nav .logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--head);font-weight:800;font-size:1.5rem;letter-spacing:.02em}
+.wheel{width:34px;height:34px;color:var(--lime)}
+.nav .call{background:var(--lime);color:var(--coal);text-decoration:none;font-weight:700;padding:.7rem 1.2rem;min-height:44px;display:inline-flex;align-items:center}
+
+.hero{position:relative;min-height:100vh;background:var(--graf);color:var(--conc);overflow:hidden;display:grid;align-items:end}
+.hero-img{position:absolute;top:0;right:0;bottom:0;width:58%;background:var(--coal)}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:30% 40%;display:block}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#2A2C2E 0%,rgba(42,44,46,0) 38%)}
+.hero-img figcaption{position:absolute;right:1rem;bottom:1rem;font-size:.72rem;color:var(--cool);z-index:2}
+.hero-copy{position:relative;z-index:2;padding:8rem clamp(1.5rem,4vw,3rem) 4rem}
+h1{font-size:clamp(3rem,6.6vw,7rem);max-width:12ch;text-transform:uppercase}
+.hero-copy p.sub{max-width:44ch;margin-top:1.6rem;color:#C9C8C2}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;margin-top:2rem}
+.btn{background:var(--lime);color:var(--coal);text-decoration:none;font-weight:700;padding:1rem 1.6rem;min-height:48px;display:inline-flex;align-items:center}
+.hero-actions .addr{font-weight:600;color:var(--conc)}
+.bigwheel{position:absolute;right:-6vw;top:12vh;width:min(46vw,560px);color:var(--lime);opacity:.9;z-index:1}
+
+.notice{background:var(--rust);color:#fff;padding:1rem 0}
+.notice p{font-weight:700}
+
+section{padding:clamp(4rem,8vw,7rem) 0}
+h2{font-size:clamp(2.4rem,5.4vw,5rem);text-transform:uppercase;margin:.6rem 0 2rem}
+.board-wrap{background:var(--graf);color:var(--conc)}
+.board-wrap .eyebrow{color:var(--lime)}
+.tabs{display:none}
+.board{display:grid;grid-template-columns:7rem repeat(3,1fr);border-top:2px solid var(--lime)}
+.board>div{padding:.95rem 1rem;border-bottom:1px solid #44474a;font-weight:600;perspective:600px}
+.board .h{font-family:var(--head);font-weight:800;font-size:1.5rem;text-transform:uppercase;color:var(--lime);padding-block:1.1rem}
+.board .d{color:var(--cool);font-weight:700}
+.cell{transform-origin:top;transform:rotateX(90deg);opacity:0;transition:transform .25s var(--ease),opacity .25s}
+.in .cell{transform:none;opacity:1}
+.closed{color:#7d8082;text-decoration:line-through;text-decoration-color:#5b5e60}
+.board small{display:block;font-weight:400;color:var(--cool)}
+
+.depts{background:var(--conc)}
+.dept{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:2rem;padding:2.4rem 0;border-top:2px solid var(--coal);position:relative}
+.dept h3{font-size:clamp(2rem,3.6vw,3.2rem);text-transform:uppercase}
+.dept .doc{font-weight:700;margin-top:.6rem}
+.dept ul{list-style:none;padding:0;display:grid;gap:1rem}
+.dept li b{display:block;font-weight:700}
+.dept li span{color:#4a4c4f}
+.reveal{clip-path:inset(0 100% 0 0);transition:clip-path .7s var(--ease)}
+.in .reveal,.reveal.in{clip-path:inset(0)}
+.figure{margin-top:1.5rem;position:relative}
+.figure img{width:100%;height:auto;display:block;aspect-ratio:16/8;object-fit:cover}
+.figure figcaption{font-size:.75rem;color:#4a4c4f;margin-top:.4rem}
+
+.belt{background:var(--lime);color:var(--coal);overflow:hidden;padding:1.2rem 0;border-block:2px solid var(--coal)}
+.belt div{display:flex;gap:3rem;width:max-content;animation:run 32s linear infinite;font-family:var(--head);font-weight:800;font-size:clamp(2rem,6vw,5rem);text-transform:uppercase;white-space:nowrap}
+@keyframes run{to{transform:translateX(-50%)}}
+
+.pojist{background:var(--conc)}
+.pojist p.big{font-family:var(--head);font-weight:800;font-size:clamp(2rem,4vw,3.4rem);text-transform:uppercase;letter-spacing:.02em}
+.pojist small{display:block;margin-top:.8rem;color:#4a4c4f}
+
+.contact{background:var(--coal);color:var(--conc)}
+.contact .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;align-items:start}
+.contact .num{font-family:var(--head);font-weight:800;font-size:clamp(2.6rem,6vw,5.5rem);text-decoration:none;display:block;color:var(--lime);line-height:1}
+.contact a.mail{font-size:1.2rem;word-break:break-all}
+.contact .tm li{list-style:none;margin-top:.4rem}
+.contact .tm{padding:0}
+
+footer{background:var(--coal);color:var(--cool);padding:2rem 0 5rem;font-size:.8rem;border-top:1px solid #333;position:relative}
+footer .wheel{position:absolute;right:clamp(1.5rem,4vw,3rem);top:1.2rem;width:48px;height:48px}
+
+.callbar{display:none}
+@media (max-width:860px){
+  .hero-img{position:relative;width:100%;height:52vw;min-height:240px}
+  .hero{display:block;min-height:0}
+  .hero-img::after{background:linear-gradient(0deg,#2A2C2E 0%,rgba(42,44,46,0) 40%)}
+  .hero-copy{padding:2rem 1.5rem 3rem}
+  .bigwheel{display:none}
+  .nav{background:var(--graf)}
+  .board{grid-template-columns:5.2rem 1fr}
+  .board [data-dept]{display:none}
+  .board[data-show="ort"] [data-dept="ort"],.board[data-show="zub"] [data-dept="zub"],.board[data-show="chir"] [data-dept="chir"]{display:block}
+  .tabs{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap}
+  .tabs button{min-height:44px;background:transparent;color:var(--conc);border:2px solid var(--cool);font:700 .9rem var(--body);padding:.5rem 1rem;cursor:pointer}
+  .tabs button[aria-pressed=true]{background:var(--lime);color:var(--coal);border-color:var(--lime)}
+  .dept{grid-template-columns:1fr}
+  .contact .grid{grid-template-columns:1fr}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--lime);color:var(--coal);justify-content:center;align-items:center;min-height:56px;font-weight:800;text-decoration:none;transition:transform .25s var(--ease)}
+  .callbar.hide{transform:translateY(100%)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+  .belt div{animation:none}
+  .cell{transform:none;opacity:1}
+  .reveal{clip-path:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="whl" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="5"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="8" fill="currentColor"/><path d="M50 10V42M50 58V90M10 50H42M58 50H90M22 22L44 44M56 56L78 78M78 22L56 44M44 56L22 78"/></g></symbol></defs></svg>
+
+<header class="nav">
+  <a class="logo" href="#"><svg class="wheel" data-spin><use href="#whl"/></svg>G A Dent</a>
+  <a class="call" href="tel:+420608198187">608 198 187</a>
+</header>
+
+<main>
+<div class="hero">
+  <svg class="bigwheel" data-spin aria-hidden="true"><use href="#whl"/></svg>
+  <figure class="hero-img">
+    <img src="img/hero-duo.webp" alt="Lékař při skenování zubů intraorálním skenerem" width="960" height="780" fetchpriority="high">
+    <figcaption>Ilustrační fotografie</figcaption>
+  </figure>
+  <div class="hero-copy">
+    <p class="eyebrow" style="color:var(--lime);margin-bottom:1.2rem">Tyršova 1832/9, Moravská Ostrava</p>
+    <h1>Ortodoncie, stomatologie a chirurgie v centru Ostravy</h1>
+    <p class="sub">Invisalign, intraorální skener TRIOS 3Shape a kompletní zubní péče na Tyršově ulici.</p>
+    <div class="hero-actions"><a class="btn" href="tel:+420608198187">Zavolat recepci</a><a class="addr" href="mailto:Ortodoncierecepce@gmail.com">Ortodoncierecepce@gmail.com</a></div>
+  </div>
+</div>
+
+<div class="notice"><div class="wrap"><p>Z kapacitních důvodů na stomatologii nyní nepřijímáme nové pacienty.</p></div></div>
+
+<section class="board-wrap" id="hodiny" data-in>
+  <div class="wrap">
+    <p class="eyebrow">Ordinační hodiny</p>
+    <h2>Tři ordinace, tři rozvrhy</h2>
+    <div class="tabs" role="group" aria-label="Oddělení">
+      <button aria-pressed="true" data-t="ort">Ortodoncie</button>
+      <button aria-pressed="false" data-t="zub">Zubní ordinace</button>
+      <button aria-pressed="false" data-t="chir">Stomatochirurgie</button>
+    </div>
+    <div class="board" data-show="ort" id="board">
+      <div class="h"></div><div class="h" data-dept="ort">Ortodoncie</div><div class="h" data-dept="zub">Zubní ordinace</div><div class="h" data-dept="chir">Stomatochirurgie</div>
+    </div>
+  </div>
+</section>
+
+<div class="belt" aria-hidden="true"><div><span>Invisalign</span><span>Spark</span><span>Damon</span><span>Harmony</span><span>E-brace</span><span>TRIOS 3Shape</span><span>PureWhitening</span><span>Invisalign</span><span>Spark</span><span>Damon</span><span>Harmony</span><span>E-brace</span><span>TRIOS 3Shape</span><span>PureWhitening</span></div></div>
+
+<section class="depts" data-in>
+  <div class="wrap">
+    <p class="eyebrow">Oddělení</p>
+    <h2>Co u nás ošetříme</h2>
+    <div class="dept">
+      <div><h3>Ortodoncie</h3><p class="doc">MUDr. Adam Uhlíř</p></div>
+      <div>
+        <ul>
+          <li><b>Ortodoncie</b><span>Neviditelná rovnátka (Invisalign, Spark), fixní rovnátka (Damon), lingvální rovnátka (Harmony, E-brace).</span></li>
+          <li><b>Estetická stomatologie</b><span>Bělení zubů, fazety, rovnátka.</span></li>
+        </ul>
+        <figure class="figure reveal"><img src="img/g1-duo.webp" alt="Průhledné ortodontické fólie a bělicí gel" loading="lazy" width="1200" height="585"><figcaption>Ilustrační fotografie</figcaption></figure>
+      </div>
+    </div>
+    <div class="dept">
+      <div><h3>Zubní ordinace</h3><p class="doc">MUDr. Gabriela Uhlířová</p></div>
+      <ul>
+        <li><b>Záchovná stomatologie a protetika</b><span>Prevence, diagnostika onemocnění dutiny ústní, léčba kazu, pevné náhrady zubů (korunky, můstky), snímatelné zubní náhrady.</span></li>
+        <li><b>Endodoncie</b><span>Ošetření kořenových kanálků.</span></li>
+        <li><b>Dentální hygiena</b><span>Nácvik správného čištění zubů, profesionální čištění, pískování, odstranění zubního kamene, bělení PureWhitening.</span></li>
+      </ul>
+    </div>
+    <div class="dept">
+      <div><h3>Stomatochirurgie</h3><p class="doc">MUDr. Tereza Uhříková</p></div>
+      <ul><li><b>Zubní chirurgie</b><span>Zubní implantáty, léčba parodontitidy, extrakce zubů.</span></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="pojist">
+  <div class="wrap">
+    <p class="eyebrow">Pojišťovny</p>
+    <p class="big">VZP · VOZP · ČPZP · OZP · RBP · ZPMV</p>
+    <small>Podle log na stávajícím webu ordinace. Před nasazením potvrdit s ordinací.</small>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow" style="color:var(--lime)">Kontakt</p>
+      <h2 style="color:var(--conc)">Recepce</h2>
+      <a class="num" href="tel:+420608198187">+420 608 198 187</a>
+      <p style="margin-top:1.2rem"><a class="mail" href="mailto:Ortodoncierecepce@gmail.com">Ortodoncierecepce@gmail.com</a></p>
+    </div>
+    <div>
+      <p class="eyebrow" style="color:var(--lime)">Adresa</p>
+      <p style="font-size:1.4rem;font-weight:700;margin:.6rem 0 1.4rem">Tyršova 1832/9<br>702 00 Moravská Ostrava</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Tyr%C5%A1ova+1832%2F9+Ostrava">Otevřít v mapách</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><p>Ukázkový návrh webu. Texty podle stávajícího webu ordinace, před nasazením ověřit s ordinací. Fotografie jsou převzaté ze stávajícího webu pouze pro tento soukromý návrh a mají ilustrační charakter.</p></div>
+  <svg class="wheel" data-spin aria-hidden="true"><use href="#whl"/></svg>
+</footer>
+<a class="callbar" id="callbar" href="tel:+420608198187">Zavolat recepci</a>
+
+<script>
+var HOURS={ort:[["Zavřeno"],["7:00–12:00","13:00–18:00"],["7:00–11:30","12:00–15:00"],["7:00–12:30","13:00–15:00"],["7:00–14:00"]],
+zub:[["Zavřeno"],["7:00–12:00","12:30–14:00"],["7:30–12:00","12:30–16:00"],["12:00–18:00"],["8:00–14:00"]],
+chir:[["7:30–15:00"],["Zavřeno"],["Zavřeno"],["8:30–11:30","12:00–18:00"],["Zavřeno"]]};
+var DAYS=["Pondělí","Úterý","Středa","Čtvrtek","Pátek"];
+(function(){
+  var b=document.getElementById('board'),n=0;
+  DAYS.forEach(function(d,i){
+    var h=document.createElement('div');h.className='d';h.textContent=d;b.appendChild(h);
+    ['ort','zub','chir'].forEach(function(k){
+      var c=document.createElement('div');c.setAttribute('data-dept',k);
+      var v=HOURS[k][i],cl=v[0]==="Zavřeno";
+      c.innerHTML='<span class="cell'+(cl?' closed':'')+'" style="display:block;transition-delay:'+(n*30)+'ms">'+v.join('<small>')+(v.length>1?'</small>':'')+'</span>';
+      b.appendChild(c);n++;
+    });
+  });
+  document.querySelectorAll('.tabs button').forEach(function(t){t.addEventListener('click',function(){
+    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===t)});
+    b.setAttribute('data-show',t.dataset.t);
+  })});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});
+  document.querySelectorAll('[data-in],.reveal').forEach(function(el){io.observe(el)});
+  var wh=document.querySelectorAll('[data-spin]');
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var t=false;addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(function(){var r=scrollY*.08;wh.forEach(function(w){w.style.transform='rotate('+r+'deg)'});t=false})}},{passive:true});
+  }
+  var cb=document.getElementById('callbar'),k=document.getElementById('kontakt');
+  new IntersectionObserver(function(es){cb.classList.toggle('hide',es[0].isIntersecting)},{threshold:.15}).observe(k);
+})();
+</script>
+</body>
+</html>
