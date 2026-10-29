@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Loggins Plumbing Service – Lufkin, TX (concept mockup)</title>
+<meta name="description" content="Concept mockup of a homepage for Loggins Plumbing Service, Lufkin, TX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0B5B96;--deep:#093B63;--sun:#FFC531;--cream:#FFF9EC;--ink:#10253A;--mute:#52667A;--head:"Bricolage Grotesque",system-ui,sans-serif;--body:"Source Sans 3",system-ui,sans-serif;--ease:cubic-bezier(.22,.8,.3,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:1.1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);font-weight:800;line-height:1;letter-spacing:-.02em}
+.wrap{width:min(1180px,100% - 3rem);margin-inline:auto}
+.strip{background:var(--deep);color:#fff;font-weight:600;font-size:.95rem}
+.strip .wrap{display:flex;justify-content:space-between;gap:1rem;padding-block:.55rem;flex-wrap:wrap}
+.strip a{text-decoration:none}
+.head .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:1rem;gap:1rem}
+.head img{height:48px;width:auto;display:block}
+.call{background:var(--sun);color:var(--ink);font-family:var(--head);font-weight:800;font-size:1.4rem;text-decoration:none;padding:.7rem 1.4rem;min-height:48px;display:inline-flex;align-items:center;border-radius:999px;transition:transform .15s var(--ease)}
+.call:active{transform:scale(.97)}
+
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:3rem;align-items:center;padding-block:clamp(2rem,6vw,5rem)}
+h1{font-size:clamp(2.8rem,6.6vw,5.6rem)}
+h1 span{color:var(--blue)}
+.hero p.l{margin-top:1.4rem;max-width:40ch;color:var(--mute);font-size:1.2rem}
+.acts{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.btn{display:inline-flex;min-height:52px;align-items:center;padding:.8rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;background:var(--blue);color:#fff;transition:transform .15s var(--ease)}
+.btn.o{background:transparent;color:var(--blue);border:2px solid var(--blue)}
+.btn:active{transform:scale(.97)}
+.photo{position:relative}
+.photo img{width:100%;aspect-ratio:5/6;object-fit:cover;object-position:78% 88%;border-radius:200px 200px 28px 28px;display:block}
+.photo figcaption{position:absolute;right:.8rem;bottom:.5rem;color:#fff;font-size:.72rem}
+.badge{position:absolute;left:-1.2rem;bottom:2rem;background:var(--sun);padding:1rem 1.3rem;border-radius:20px;font-family:var(--head);font-weight:800;font-size:1.2rem;transform:rotate(-3deg);box-shadow:0 8px 24px rgba(16,37,58,.18)}
+
+.trust{background:var(--blue);color:#fff}
+.trust ul{display:flex;flex-wrap:wrap;gap:.5rem 2.4rem;list-style:none;padding:1.2rem 0;font-weight:600}
+.trust li::before{content:"✓";color:var(--sun);margin-right:.5rem}
+
+section{padding-block:clamp(3.5rem,7vw,6rem)}
+h2{font-size:clamp(2.2rem,4.6vw,3.8rem);margin-bottom:2rem}
+.list a,.list div.r{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr) 2.5rem;gap:1.5rem;align-items:center;padding:1.6rem 0;border-bottom:2px solid #eadfc4;text-decoration:none}
+.list h3{font-size:clamp(1.7rem,3vw,2.5rem)}
+.list p{color:var(--mute)}
+.list .ar{font-size:1.5rem;color:var(--blue);text-align:right}
+.list a:hover h3{color:var(--blue)}
+
+.info{background:#fff;border-radius:28px;padding:clamp(1.6rem,4vw,3rem);display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.info h3{font-size:1.5rem;margin-bottom:.6rem}
+.info .big{font-family:var(--head);font-weight:800;font-size:clamp(2rem,4vw,3.2rem);text-decoration:none;color:var(--blue);display:block;line-height:1.05}
+.hrs{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1.2rem}
+.emer{margin-top:1rem;background:var(--sun);display:inline-block;padding:.4rem .9rem;border-radius:999px;font-weight:600;font-size:.95rem}
+
+footer{padding:2rem 0 6rem;color:var(--mute);font-size:.85rem}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.bar{display:none}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .photo{order:-1}.photo img{aspect-ratio:4/3;border-radius:120px 120px 24px 24px}
+  .badge{left:.5rem}
+  .list a,.list div.r{grid-template-columns:1fr}
+  .list .ar{display:none}
+  .info{grid-template-columns:1fr}
+  .strip .wrap span:last-child{display:none}
+  .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--sun);color:var(--ink);min-height:58px;align-items:center;justify-content:center;font-family:var(--head);font-weight:800;font-size:1.3rem;text-decoration:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="strip"><div class="wrap"><span>Emergency 24/7 service available</span><span>Mon–Fri 7:30 am – 4:30 pm</span></div></div>
+<header class="head"><div class="wrap">
+  <a href="#"><img src="img/logo.webp" alt="Loggins Plumbing Service" width="390" height="95"></a>
+  <a class="call" href="tel:+19366393073">(936) 639-3073</a>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Your go-to plumbers in <span>Lufkin, TX</span></h1>
+    <p class="l">Family-owned residential and commercial plumbing. Free estimates, open and honest communication.</p>
+    <div class="acts"><a class="btn" href="tel:+19366393073">Call for a free estimate</a><a class="btn o" href="#services">See our services</a></div>
+  </div>
+  <figure class="photo reveal">
+    <img src="img/dl.webp" alt="Plumbing tools next to a water heater leak" width="1600" height="847" fetchpriority="high">
+    <span class="badge">Senior discounts</span>
+    <figcaption>Photo from the current website</figcaption>
+  </figure>
+</div></div>
+
+<div class="trust"><div class="wrap"><ul><li>Free estimates</li><li>Senior discounts</li><li>Medical gas certified</li><li>Family-owned</li><li>Residential and commercial</li></ul></div></div>
+
+<section id="services"><div class="wrap">
+  <h2 class="reveal">What we fix</h2>
+  <div class="list reveal">
+    <a href="tel:+19366393073"><h3>Water heater installs</h3><p>Installation of water heaters for homes and businesses in the Lufkin area.</p><span class="ar">→</span></a>
+    <a href="tel:+19366393073"><h3>Water and gas line repair</h3><p>Repairs of water and gas lines, from a small leak to a larger job.</p><span class="ar">→</span></a>
+    <a href="tel:+19366393073"><h3>General plumbing repair</h3><p>Fast, efficient solutions for everyday plumbing problems.</p><span class="ar">→</span></a>
+    <div class="r"><h3>Medical gas</h3><p>We are medical gas certified and meet the highest standards for specialized medical gas services.</p><span></span></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="info reveal">
+    <div>
+      <h3>Call us</h3>
+      <a class="big" href="tel:+19366393073">(936) 639-3073</a>
+      <span class="emer">Emergency 24/7 service available</span>
+    </div>
+    <div>
+      <h3>Visit</h3>
+      <p>101 Industrial Blvd, Suite 109<br>Lufkin, TX 75904</p>
+      <h3 style="margin-top:1.2rem">Hours</h3>
+      <div class="hrs"><span>Mon–Fri</span><span>7:30 am – 4:30 pm</span><span>Sat–Sun</span><span>Closed</span></div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><p>Concept mockup by Lucián Švancár, not the official website of Loggins Plumbing Service. Text and photos are taken from the current website for this private preview only.</p></div></footer>
+<a class="bar" href="tel:+19366393073">Call (936) 639-3073</a>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
