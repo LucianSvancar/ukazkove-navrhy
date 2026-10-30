@@ -6,4 +6,5 @@ document.querySelectorAll('.svlist a').forEach(a=>{const f=()=>{document.querySe
 const strip=document.querySelector('.strip'),cb=document.querySelector('.callbar');
 if(cb){const upd=()=>{const lim=strip?strip.getBoundingClientRect().bottom+scrollY:420;cb.classList.toggle('show',scrollY>lim)};addEventListener('scroll',upd,{passive:true});upd()}
 if(!rm&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.sec .st,.srow,.svlist li,.rnd,.cities li').forEach(x=>{x.classList.add('rv');io.observe(x)})}
+addEventListener('load',()=>setTimeout(()=>document.querySelectorAll('img[data-src]').forEach(i=>{i.src=i.dataset.src;i.removeAttribute('data-src')}),1200));
 })();
