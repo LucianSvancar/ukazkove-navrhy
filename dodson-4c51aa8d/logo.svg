@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="525" height="635" viewBox="215 140 525 635" role="img" aria-label="Dodson Heat and Air">
+<defs><radialGradient id="g" cx="330" cy="455" r="300" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#e6e6e6"/><stop offset=".55" stop-color="#9a9a9a"/><stop offset="1" stop-color="#6f6f6f"/></radialGradient>
+<radialGradient id="b" cx="665" cy="450" r="260" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0a14f0"/><stop offset=".7" stop-color="#050a9c"/><stop offset="1" stop-color="#02027e"/></radialGradient></defs>
+<path fill="url(#g)" d="M228 246 L322 155 V655 H228 Z M322 575 V655 H440 C548 655 616 575 616 455 C616 340 548 262 443 262 V337 C500 345 543 395 543 455 C543 520 500 570 433 575 Z"/>
+<path fill="url(#b)" d="M333 152 H440 C625 152 727 290 727 455 C727 620 625 762 440 762 H228 V665 H440 C548 665 627 580 627 455 C627 330 548 252 433 252 V565 H333 Z"/>
+</svg>
