@@ -101,7 +101,7 @@ p{text-wrap:pretty}
 .idx{position:sticky;top:100px;border-top:3px solid var(--ink)}.idx h2{font:600 .78rem var(--bf);letter-spacing:.14em;text-transform:uppercase;padding:.8rem 0;color:var(--mute)}
 .idx ul{list-style:none;padding:0}.idx li a{display:block;padding:.65rem .5rem;border-top:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:.95rem;font-weight:500;transition:background .15s,padding .2s var(--ease)}.idx li a:hover{background:var(--bone);padding-left:.9rem}.idx [aria-current=page]{background:var(--ol);color:#fff;font-weight:600}
 .idc{margin-top:var(--s4);border:1px solid var(--ink);padding:var(--s3);background:var(--bone)}.idc b{display:block;font:700 1.05rem var(--hf);letter-spacing:.03em}
-@media(max-width:900px){.sheet{grid-template-columns:1fr}.idx{position:static}.idx ul{display:none}}
+@media(max-width:900px){.sheet{grid-template-columns:1fr}.idx{position:static}}
 .doc{max-width:760px}.doc h2{font-size:clamp(1.35rem,2.2vw,1.8rem);margin:var(--s6) 0 var(--s3);padding-top:var(--s3);border-top:2px solid var(--ink)}.doc h2:first-child{margin-top:0;border:0;padding:0}
 .doc p{margin-top:var(--s3)}.doc .acts{margin-top:var(--s4)}
 .doc .two h2{margin-top:0}
@@ -130,3 +130,26 @@ label{display:grid;gap:6px;font-weight:500;font-size:.95rem}input,textarea,selec
 .fig.wd{margin-top:var(--s5)}.fig.wd img{max-width:none}
 .safe .sbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;filter:grayscale(.6)}.safe::before{z-index:1}.sf{z-index:2}
 .cardc img{width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:var(--s4);border-top:3px solid var(--ink)}
+
+.lg,.sh h1.lg,.doc h2,.big,.st.lg{font-family:var(--bf);font-weight:600;letter-spacing:-.005em;text-transform:none}
+.sh h1.lg{font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.1}
+.big{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.2}.st.lg{font-size:clamp(1.8rem,3.4vw,2.7rem)}
+.doc h2{font-size:clamp(1.3rem,2vw,1.65rem)}
+.fig.wd{border:0;padding:0;background:none;margin-top:var(--s5)}.fig.wd img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ig{align-items:center}
+.nob{padding-bottom:0}.fw{width:100%;height:clamp(240px,34vw,520px);object-fit:cover;margin-top:var(--s6);filter:grayscale(.2)}
+.pstrip{background:var(--ink);color:#fff}.pstrip ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,1fr)}
+.pstrip a{display:block;position:relative;color:#fff;text-decoration:none;overflow:hidden}.pstrip img{width:100%;height:clamp(240px,30vw,420px);object-fit:cover;transition:transform .5s var(--ease)}.pstrip a:hover img{transform:scale(1.04)}
+.pstrip span{position:absolute;left:0;right:0;bottom:0;padding:2rem .9rem .8rem;background:linear-gradient(0deg,rgba(22,24,14,.92),transparent);font-size:.85rem;line-height:1.35}.pstrip b{display:block;font-size:.95rem}
+.pl{display:flex;flex-wrap:wrap;gap:.75rem;padding-block:var(--s5)}
+@media(max-width:900px){.pstrip ul{grid-template-columns:1fr 1fr}.pstrip li:last-child{grid-column:1/-1}}
+.spec.cols{columns:2;column-gap:2.5rem}.spec.cols li{break-inside:avoid}@media(max-width:700px){.spec.cols{columns:1}}
+.banner.tall img{height:clamp(260px,44vw,620px);object-position:center 30%}
+.cta{position:relative;overflow:hidden}.cta .cbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3;filter:grayscale(.5)}
+.ci{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;justify-items:stretch}
+.tbc{border:1px solid rgba(221,227,146,.55);background:rgba(22,24,14,.78)}.tbc>div{padding:.8rem 1.1rem;border-top:1px solid rgba(221,227,146,.3)}.tbc>div:first-child{border:0}.tbc dt{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}.tbc dd{font-size:1.02rem}.tbc a{color:#fff;word-break:break-word}.tbc>div:first-child dd{font:700 1.7rem var(--bf)}
+@media(max-width:860px){.ci{grid-template-columns:1fr}}
+@media(max-width:900px){.idx{order:2;border-top:3px solid var(--ink)}.idx ul{display:block}.idx li a{min-height:44px}}
+@media(max-width:760px){.ft{padding-bottom:84px}}
+
+@media(max-width:760px){.cb.hide{transform:translateY(105%)}}
