@@ -1,0 +1,9 @@
+(function(){var d=document,b=d.querySelector('.burger'),m=d.getElementById('mob');
+if(b&&m){b.addEventListener('click',function(){var o=m.hasAttribute('hidden');if(o){m.removeAttribute('hidden');}else{m.setAttribute('hidden','')}b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');d.body.style.overflow=o?'hidden':''});m.addEventListener('click',function(e){if(e.target.closest('a')){m.setAttribute('hidden','');d.body.style.overflow='';b.setAttribute('aria-expanded',false)}})}
+d.querySelectorAll('.dd>button').forEach(function(x){x.addEventListener('click',function(){var p=x.parentNode,o=!p.classList.contains('open');d.querySelectorAll('.dd.open').forEach(function(q){q.classList.remove('open');q.firstChild.setAttribute('aria-expanded',false)});if(o){p.classList.add('open');x.setAttribute('aria-expanded',true)}})});
+d.addEventListener('click',function(e){if(!e.target.closest('.dd'))d.querySelectorAll('.dd.open').forEach(function(q){q.classList.remove('open')})});
+var cb=d.getElementById('callbar'),w=d.querySelector('[data-watch]');
+if(cb&&w&&'IntersectionObserver' in window){new IntersectionObserver(function(es){var e=es[0],past=!e.isIntersecting&&e.boundingClientRect.bottom<0;cb.classList.toggle('show',past);cb.setAttribute('aria-hidden',!past);cb.querySelectorAll('a').forEach(function(a){a.tabIndex=past?0:-1})}).observe(w)}
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!rm&&'IntersectionObserver' in window){var els=d.querySelectorAll('.row,.rev,.doc,.staff,.next,.facts li');els.forEach(function(x){x.classList.add('rv')});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(x){io.observe(x)})}
+})();
