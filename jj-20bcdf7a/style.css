@@ -356,3 +356,11 @@ ul.chk2 li::before{border-color:var(--red)}
 .hbadge{display:inline-block;margin:0 0 1.2rem;background:var(--pk);color:#14181f;font-weight:700;padding:.55rem 1.1rem;border-radius:999px}
 .sfig{margin:0 0 1.6rem}.sfig img{max-width:520px;width:100%;height:auto;border-radius:var(--r)}
 .hero2 .hh{padding-block:clamp(3rem,8vw,6rem)}
+.phero.pimg>img{filter:grayscale(.5) contrast(1.03);object-position:50% 62%}
+.phero.pimg::before{background:linear-gradient(90deg,rgba(21,24,27,.82) 0%,rgba(21,24,27,.5) 55%,rgba(196,32,42,.22) 100%)}
+.rq{color:var(--blk)}.rq cite{color:var(--red)}
+.rvw{grid-template-columns:1fr;gap:1.6rem}.rvw .st{margin-bottom:.4rem}
+.qs{grid-template-columns:1fr 1fr;gap:1.4rem 2rem}.qs figure:first-child{grid-column:1/-1}
+.qs blockquote{font-size:1.0625rem;line-height:1.6}
+.gal0{padding-bottom:clamp(1.2rem,2.4vw,2rem)}.rv{padding-top:clamp(1.4rem,2.6vw,2.2rem)}
+@media (max-width:700px){.qs{grid-template-columns:1fr}}
