@@ -8,3 +8,8 @@ r.addEventListener('input',function(){w.style.setProperty('--p',r.value+'%')})})
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.sc,.ba,.bc,.card,.tc,.faq details').forEach(function(el){el.classList.add('reveal');io.observe(el)})}
 })();
+
+(function(){var d=document.documentElement;d.classList.add('js');var t=document.querySelector('.jh .acts')||null;
+function on(v){d.classList.toggle('cb',v)}
+if(t&&'IntersectionObserver' in window){new IntersectionObserver(function(e){on(!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t)}
+else{addEventListener('scroll',function(){on(scrollY>220)},{passive:true});on(scrollY>220)}})();
