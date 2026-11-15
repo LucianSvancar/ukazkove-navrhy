@@ -15,7 +15,7 @@ document.documentElement.classList.add('clkon');
 var tk=false;
 function upd(){tk=false;var r=cl.getBoundingClientRect(),h=cl.offsetHeight-window.innerHeight,p=Math.min(1,Math.max(0,-r.top/Math.max(h,1)));
 cl.style.setProperty('--p',p.toFixed(3));
-var m=Math.round((12*60+p*15*60)/5)*5,hh=Math.floor(m/60)%24,mm=m%60,ap=hh>=12?'PM':'AM',h12=hh%12||12;
+var m=Math.round((6*60+p*24*60)/5)*5,hh=Math.floor(m/60)%24,mm=m%60,ap=hh>=12?'PM':'AM',h12=hh%12||12;
 tm.textContent=h12+':'+(mm<10?'0':'')+mm+' '+ap;
 st.classList.toggle('day',p<.5);
 var a=p<.25?0:p<.5?1:p<.75?2:3;ls.forEach(function(li,i){li.classList.toggle('on',i===a)})}
