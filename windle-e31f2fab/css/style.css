@@ -250,3 +250,8 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--cyan);outline-of
 .hd{background:#fff}
 html:not(.js) .nav{overflow:visible;flex-wrap:wrap}
 @media (max-width:959px){.hero-home.hsp{padding-bottom:calc(var(--s8) + 24px)}}
+
+/* v3 fixes */
+.hd{background:#fff!important;-webkit-backdrop-filter:none;backdrop-filter:none;opacity:1}
+.callbar{background:#fff}
+@media (max-width:699px){.btns{flex-direction:column;align-items:stretch}.btns .btn,.hero .btn,.cta .btn,.ft .btn{width:100%}.mnav .btn{width:100%}}
