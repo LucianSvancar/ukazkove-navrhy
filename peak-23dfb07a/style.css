@@ -106,3 +106,7 @@ html.js .rv{opacity:1;transform:translateY(14px);transition:opacity .5s var(--ea
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}html.js .rv{opacity:1;transform:none}}
 
 @media(min-width:720px){.brand img{height:60px}.hdi{min-height:84px}}
+
+.qg{align-items:stretch}.q{display:flex;flex-direction:column}.q blockquote{flex:1}
+.frame{min-height:220px}.frame img{min-height:220px}
+@media(min-width:1000px){.sv2{grid-template-columns:repeat(6,1fr)}.sv2 article{grid-column:span 2}.sv2 article:nth-child(1),.sv2 article:nth-child(4){grid-column:span 4}.sv2 article:nth-child(1) img,.sv2 article:nth-child(4) img{height:250px}}
